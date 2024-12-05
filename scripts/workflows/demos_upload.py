@@ -53,7 +53,7 @@ def package_and_upload(package_in, package_out, username, password, url):
     if 'hydra:description' in result:
         print("%sUpload failed for %s with error: %s" % (utils.Colors.FAIL, package_out, result['hydra:description']))
     else:
-        print("%sUpload successful for %s" % (utils.Colors.OKBLUE, package_out))
+        print("%sUpload successful for %s" % (utils.Colors.OKGREEN, package_out))
         utils.raise_exception(is_status_success(result['params']))
 
 if __name__ == "__main__":
