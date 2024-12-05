@@ -51,9 +51,9 @@ def package_and_upload(package_in, package_out, username, password, url):
         )
     )
     if 'hydra:description' in result:
-        print("%sUpload failed for %s with error: %s" % (utils.Colors.FAIL, package_out, result['hydra:description']))
+        print("%sUpload failed for %s with error: %s\n" % (utils.Colors.FAIL, package_out, result['hydra:description']))
     else:
-        print("%sUpload successful for %s" % (utils.Colors.OKGREEN, package_out))
+        print("%sUpload successful for %s\n" % (utils.Colors.OKGREEN, package_out))
         utils.raise_exception(is_status_success(result['params']))
 
 if __name__ == "__main__":
@@ -100,7 +100,7 @@ if __name__ == "__main__":
     if success:
         success = utils.extract_7z_file("tmp/packer.7z", "tmp")
         if success:
-            print("%sDownload completed." % utils.Colors.OKBLUE)
+            print("%sDownload completed.\n\n" % utils.Colors.OKBLUE)
             for demo in demos:
                 print("%sRunning for %s" % (utils.Colors.UNDERLINE, demo))
                 package_and_upload(
