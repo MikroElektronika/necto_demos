@@ -140,12 +140,15 @@ def capture_stdout(func, *args, **kwargs):
 
 def fetch_json_from_output(string_in):
     lines = string_in.split('\n')
-    print("%sReturn message: %s\n" % (Colors.UNDERLINE, string_in))
+    print("%sReturn message:\n%s\n\n" % (Colors.UNDERLINE, string_in))
     if 'HTTP error' in string_in:
         for line in lines:
             if 'Response' in line:
                 return json.loads(line.replace('Response: ', ''))
     else:
+        print("%sEach line of message:\n" % Colors.UNDERLINE)
         for line in lines:
+            print("%s%s" % (Colors.WARNING, line))
             if 'jsonrpc' in line:
+                print("%s\nParsed message:\n%s\n" % (Colors.OKCYAN, line))
                 return json.loads(line)
