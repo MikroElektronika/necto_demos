@@ -32,3 +32,4 @@ if __name__ == "__main__":
     demos.restructure_directories_recursively(copied_path)
     demos.move_manifest_to_project_folder(copied_path)
     demos.move_resources_to_project(copied_path)
+    demos.update_versions_in_details(copied_path)

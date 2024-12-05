@@ -1,5 +1,4 @@
-import os
-import shutil
+import os, re, json, shutil
 
 def lowercase_files_and_folders(directory_path):
     """
@@ -57,6 +56,45 @@ def move_manifest_to_project_folder(base_dir):
                 shutil.move(manifest_path, new_path)
 
                 print(f"Moved '{manifest_path}' to '{new_path}'")
+
+def update_versions_in_details(base_directory):
+    for root, dirs, files in os.walk(base_directory):
+        # Find the manifest.json file
+        if 'manifest.json' in files:
+            manifest_path = os.path.join(root, 'manifest.json')
+
+            # Read and parse the manifest.json file
+            with open(manifest_path, 'r') as manifest_file:
+                try:
+                    manifest_data = json.load(manifest_file)
+                    version = manifest_data.get('version', None)
+                    if version:
+                        # Path to details.md in the 'resources' folder
+                        details_path = os.path.join(root, 'resources', 'details.md')
+
+                        # Update details.md if it exists
+                        if os.path.exists(details_path):
+                            with open(details_path, 'r') as details_file:
+                                details_content = details_file.readlines()
+
+                            # Use regex to find the line with the version and replace it
+                            updated_content = ''
+                            for line in details_content:
+                                if '**Version**' in line:
+                                    updated_content += f'- **Version**     : {version}\n'
+                                else:
+                                    updated_content += line
+
+                            # Write the updated content back to details.md
+                            with open(details_path, 'w') as details_file:
+                                details_file.write(updated_content)
+                            print(f'Updated {details_path} with version {version}')
+                        else:
+                            print(f'Details file not found for {manifest_path}')
+                    else:
+                        print(f'No version found in {manifest_path}')
+                except json.JSONDecodeError:
+                    print(f'Error decoding JSON from {manifest_path}')
 
 def move_resources_to_project(base_path):
     """
@@ -143,3 +181,4 @@ if __name__ == "__main__":
     restructure_directories_recursively(base_path)
     move_manifest_to_project_folder(base_path)
     move_resources_to_project(base_path)
+    update_versions_in_details(base_path)
