@@ -1,0 +1,39 @@
+name: Demos
+
+on:
+  workflow_dispatch:
+    inputs:
+      demo_names:
+        type: string
+        description: Which demos to upload (specific one or regex for multiple)
+        default: ''
+      demos_all:
+        type: boolean
+        description: Select to upload all demos in repository
+        default: false
+      dbp:
+        type: boolean
+        default: true
+        description: If selected, will upload for NECTO 7.1.0+ versions
+
+jobs:
+  Upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements/demos.txt
+
+      - name: Package and upload demos
+        run: |
+          echo "Uploading demos..."
+          python -u scripts/workflows/demos_package_then_upload.py "${{ secrets.PACKER_DOWNLOAD_LINK }}" "${{ secrets.PACKER_USERNAME }}" "${{ secrets.PACKER_PASSWORD }}" "${{ secrets.PACKER_URL }}" "${{ github.event.inputs.demo_names }}" "--all_demos" "${{ github.event.inputs.demos_all }}" "--dbp" "${{ github.event.inputs.dbp }}"

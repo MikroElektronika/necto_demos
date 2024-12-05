@@ -1,0 +1,32 @@
+{
+    "architecture": "ARM|PIC|PIC32|RISC-V",
+    "category": "Storage",
+    "changelog": "Resources/CHANGELOG.md",
+    "contains": [
+        "examples",
+        "source_files"
+    ],
+    "dependency_list": [],
+    "details": "Resources/DETAILS.md",
+    "display_name": "DMA Memory to Memory Demo",
+    "example_list": [
+        {
+            "project_path": "Examples/example"
+        }
+    ],
+    "help": "",
+    "icon": "Resources/mikrosdk.png",
+    "license": {
+        "file_path": "",
+        "id": "46"
+    },
+    "name": "mikroe.demo.sdk.dma.m2m",
+    "product_link": "https://libstock.mikroe.com/projects/view/5634/dma-memory-to-memory-demo",
+    "short_description": "The application demonstrates DMA SDK functionality.",
+    "supported_compiler": "mikroC AI|GCC|Clang|XC",
+    "type": "Library",
+    "_type": "mikroSDK Library",
+    "related_projects": [],
+    "version": "2.0.0.4",
+    "cmake": true
+}

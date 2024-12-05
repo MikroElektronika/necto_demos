@@ -1,0 +1,8 @@
+demos_modified
+.vscode
+__pycache__
+*.7z
+*.zip
+output
+demos_dbp
+tmp

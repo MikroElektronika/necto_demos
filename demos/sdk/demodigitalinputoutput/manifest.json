@@ -1,0 +1,32 @@
+{
+    "architecture": "ARM|PIC|PIC32|RISC-V|AVR|dsPIC",
+    "category": "Click Boards > Sensors > Force",
+    "changelog": "Resources/CHANGELOG.md",
+    "contains": [
+        "examples",
+        "source_files"
+    ],
+    "dependency_list": [],
+    "details": "Resources/DETAILS.md",
+    "display_name": "Digital Input Output Demo",
+    "example_list": [
+        {
+            "project_path": "Examples/example"
+        }
+    ],
+    "help": "",
+    "icon": "Resources/mikrosdk.png",
+    "license": {
+        "file_path": "",
+        "id": "46"
+    },
+    "name": "mikroe.demo.sdk.digitalinputoutput",
+    "product_link": "https://libstock.mikroe.com/projects/view/5047/digital-input-output-demo",
+    "short_description": "The application demonstrates GPIO SDK functionality.",
+    "supported_compiler": "mikroC AI|GCC|Clang|XC",
+    "type": "Library",
+    "_type": "mikroSDK Library",
+    "related_projects": [],
+    "version": "2.0.0.20",
+    "cmake": true
+}
