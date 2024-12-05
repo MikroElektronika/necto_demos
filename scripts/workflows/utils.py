@@ -143,8 +143,7 @@ def fetch_json_from_output(string_in):
     if 'HTTP error' in string_in:
         for line in lines:
             if 'Response' in line:
-                # TODO - return if needed for debug
-                # print("%s\nParsed message:\n%s\n" % (Colors.OKCYAN, line))
+                print("%s\nParsed message:\n%s\n" % (Colors.WARNING, line))
                 return json.loads(line.replace('Response: ', ''))
     else:
         for line in lines:
