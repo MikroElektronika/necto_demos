@@ -140,6 +140,7 @@ def capture_stdout(func, *args, **kwargs):
 
 def fetch_json_from_output(string_in):
     lines = string_in.split('\n')
+    print("%sReturn message: %s\n" % (Colors.UNDERLINE, string_in))
     if 'HTTP error' in string_in:
         for line in lines:
             if 'Response' in line:
