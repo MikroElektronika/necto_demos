@@ -171,7 +171,8 @@ if __name__ == "__main__":
 
     ## Remove any previous output
     ## Useful for local runs, not container runs
-    shutil.rmtree(os.path.join(os.getcwd(), 'output'))
+    if os.path.exists(os.path.join(os.getcwd(), 'output')):
+        shutil.rmtree(os.path.join(os.getcwd(), 'output'))
 
     ## Download packer scripts
     success = utils.download_file(args.packer_download_link, "tmp/packer.7z")
