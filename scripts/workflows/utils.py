@@ -1,4 +1,6 @@
-import os, io, sys, json, py7zr, requests, subprocess
+import os, io, sys, json, \
+       py7zr, requests, subprocess, \
+       zipfile, shutil
 
 class Colors:
     HEADER = '\033[95m'
@@ -153,3 +155,59 @@ def fetch_json_from_output(string_in):
                 # TODO - return if needed for debug
                 # print("%s\nParsed message:\n%s\n" % (Colors.OKCYAN, line[:line_cnt]))
                 return json.loads(line[:line_cnt])
+
+def zip_all_files_and_dirs(input_path, output_path, archive_name):
+    """
+    Packs the files in the specified input directory into a .zip archive
+    and saves it to the output path with the specified archive name.
+
+    :param input_path: The directory containing files to pack
+    :param output_path: The directory where the archive will be saved
+    :param archive_name: The name of the archive file (without extension)
+    """
+    if not os.path.isdir(input_path):
+        raise ValueError(f"Input path {input_path} is not a valid directory.")
+
+    if not os.path.isdir(output_path):
+        raise ValueError(f"Output path {output_path} is not a valid directory.")
+
+    # Ensure the output path exists
+    os.makedirs(output_path, exist_ok=True)
+
+    # Full path to the zip file
+    zip_file_path = os.path.join(output_path, f"{archive_name}.zip")
+
+    # Create the zip archive
+    with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+        for root, dirs, files in os.walk(input_path):
+            for file in files:
+                file_path = os.path.join(root, file)
+                zipf.write(file_path, os.path.relpath(file_path, input_path))
+
+    print(f"Archive created successfully at {zip_file_path}")
+
+    return zip_file_path
+
+def copy_files_and_folders(src, dst):
+    """
+    Copy all files and directories from the source path to the destination path.
+    """
+    # Ensure destination directory exists
+    if not os.path.exists(dst):
+        os.makedirs(dst)
+
+    # Walk through the source directory
+    for root, dirs, files in os.walk(src):
+        # Calculate the relative path to preserve directory structure
+        rel_path = os.path.relpath(root, src)
+        dst_dir = os.path.join(dst, rel_path)
+
+        # Create directories in the destination path
+        if not os.path.exists(dst_dir):
+            os.makedirs(dst_dir)
+
+        # Copy all files in the current directory to the destination
+        for file in files:
+            src_file = os.path.join(root, file)
+            dst_file = os.path.join(dst_dir, file)
+            shutil.copy2(src_file, dst_file)
