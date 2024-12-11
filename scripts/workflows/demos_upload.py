@@ -32,7 +32,7 @@ def find_directories_with_regex(base_path, regex_pattern):
 
     return matching_dirs
 
-def package_and_upload_dbp(package_in, package_out, username, password, url):
+def package_and_upload_dbp(package_in, package_out, **kwargs):
     package_path = None
 
     package_in = os.path.join(
@@ -57,9 +57,9 @@ def package_and_upload_dbp(package_in, package_out, username, password, url):
             utils.call_python_script,
             'tmp/packer/main.py',
             'upload', '--input', result['params']['output_path'],
-            '--username', username,
-            '--password', password,
-            '--url', url
+            '--username', kwargs['username'],
+            '--password', kwargs['password'],
+            '--url', kwargs['url']
         )
     )
     if 'hydra:description' in result:
@@ -73,48 +73,19 @@ def package_and_upload_dbp(package_in, package_out, username, password, url):
 
     return package_path
 
-def package_and_upload_github(package_in, package_out, *args):
-    package_path = None
-
-    with open(os.path.join(package_in, 'manifest.json'), 'r') as file:
-        manifest = json.load(file)
-
-    ## First pack the DEMO
-    utils.copy_files_and_folders(
-        package_in,
-        os.path.join(package_out, manifest['display_name'])
-    )
-    package_path = utils.zip_all_files_and_dirs(
-        package_out,
-        'output',
-        manifest['name']
-    )
-
-    ## DEMO not uploaded from custom API,
-    ## but as asset straight to github.
-
-    return package_path
-
-def resolve_api(is_dbp):
-    match (is_dbp):
-        case True:
-            return package_and_upload_dbp
-        case False:
-            return package_and_upload_github
-
 async def main(gh_instance, demos, args, upload_api):
     for demo in demos:
         print("\n\n%sRunning for %s" % (utils.Colors.UNDERLINE, demo))
         package = upload_api(
-            demo,
-            os.path.join(
+            package_in = demo,
+            package_out = os.path.join(
                 'output', utils.fetch_after_last_separator(
                     demo, utils.get_system_separator()
                 )
             ),
-            args.packer_username,
-            args.packer_password,
-            args.packer_url
+            username = args.packer_username,
+            pasword = args.packer_password,
+            url = args.packer_url
         )
 
         if package:
@@ -144,7 +115,6 @@ if __name__ == "__main__":
     parser.add_argument('packer_url', type=str, help='Upload URL for packages.')
     parser.add_argument('demo', type=str, nargs='?', help='Specify a demo name or regex (optional).', default=None)
     parser.add_argument('--all_demos', type=str2bool, help='If True - will pack and upload all demos found.', default=False)
-    parser.add_argument('--dbp', type=str2bool, help='If True - will pack and upload all demos found to new DBP.', default=True)
 
     ## Parse the arguments
     args = parser.parse_args()
@@ -155,9 +125,6 @@ if __name__ == "__main__":
         demo_dir = os.path.join(os.getcwd(), 'demos_dbp')
         utils.call_python_script('scripts/dbp/main.py')
 
-    ## Resolve which API to use
-    upload_api = resolve_api(args.dbp)
-
     ## If all demos requested, get full list
     demo_regex = args.demo
     if args.all_demos:
@@ -167,7 +134,14 @@ if __name__ == "__main__":
     demos = find_directories_with_regex(demo_dir, demo_regex)
 
     ## Initialize github instance for current repository
-    gh_instance = gh.repo(args.gh_repo, args.gh_token)
+    tag = args.gh_tag
+    if not args.gh_tag:
+        tag = 'latest'
+    gh_instance = gh.repo(
+        repo = args.gh_repo,
+        token = args.gh_token,
+        release_id = tag
+    )
 
     ## Remove any previous output
     ## Useful for local runs, not container runs
@@ -180,7 +154,7 @@ if __name__ == "__main__":
         success = utils.extract_7z_file("tmp/packer.7z", "tmp")
         if success:
             print("%sDownload completed.\n\n" % utils.Colors.OKBLUE)
-            asyncio.run(main(gh_instance, demos, args, upload_api))
+            asyncio.run(main(gh_instance, demos, args, package_and_upload_dbp))
         else:
             print("%sExtraction failed." % utils.Colors.FAIL)
     else:
