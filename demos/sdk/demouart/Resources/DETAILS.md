@@ -5,7 +5,7 @@ This is a simple UART echo example that utilizes mikroSDK 2.0 UART driver librar
 ---
 
 - **Author**      : MIKROE
-- **Version**     : 2.0.0.4
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ---

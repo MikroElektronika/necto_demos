@@ -1,0 +1,416 @@
+{
+    "Layers": [
+        {
+            "Components": [
+                {
+                    "Events": {
+                    },
+                    "Properties": {
+                        "Background": {
+                            "BackColor": "#5c5e49",
+                            "Color": "#ffe102",
+                            "ColorTo": "#ffa60b",
+                            "Gradient": "TopBottom",
+                            "MaxPos": 100,
+                            "Transparent": false
+                        },
+                        "ClassType": "ProgressBar",
+                        "Component": {
+                            "Active": true,
+                            "CornerRadius": 10,
+                            "MinPos": 0,
+                            "Name": "ProgressBar_0",
+                            "Position": 1,
+                            "PreviousPosition": 0,
+                            "ShowPercent": true,
+                            "ShowValue": true,
+                            "Smooth": true,
+                            "StackOrder": 1,
+                            "Static": false,
+                            "Visible": true
+                        },
+                        "Geometry": {
+                            "Height": 50,
+                            "Left": 129,
+                            "Top": 105,
+                            "Width": 222
+                        },
+                        "Pen": {
+                            "Color": "#ffffff",
+                            "Width": 1
+                        },
+                        "Text": {
+                            "Caption": "1%",
+                            "Color": "#000000",
+                            "Font": "Sans_Serif_16_159"
+                        }
+                    }
+                },
+                {
+                    "Events": {
+                        "OnClick": null,
+                        "OnDown": "red_trigger",
+                        "OnPress": "",
+                        "OnUp": null
+                    },
+                    "Properties": {
+                        "Background": {
+                            "Color": "#ffe102",
+                            "ColorTo": "#ffa60b",
+                            "Gradient": "TopBottom",
+                            "PressColor": "#000000",
+                            "PressColorTo": "#00ff00",
+                            "Transparent": false
+                        },
+                        "ClassType": "RoundedButton",
+                        "Component": {
+                            "Active": true,
+                            "CornerRadius": 10,
+                            "Name": "RoundedButton_0",
+                            "StackOrder": 6,
+                            "Static": false,
+                            "Visible": true
+                        },
+                        "Geometry": {
+                            "Height": 36,
+                            "Left": 15,
+                            "Top": 17,
+                            "Width": 66
+                        },
+                        "Pen": {
+                            "Color": "#ffffff",
+                            "Width": 1
+                        },
+                        "Text": {
+                            "Caption": "RED!",
+                            "Color": "#000000",
+                            "Font": "Sans_Serif_16_159",
+                            "MaxLength": 0,
+                            "TextAlign": "AlignCenter",
+                            "VerticalText": false
+                        }
+                    }
+                },
+                {
+                    "Events": {
+                        "OnClick": null,
+                        "OnDown": "blue_trigger",
+                        "OnPress": "",
+                        "OnUp": null
+                    },
+                    "Properties": {
+                        "Background": {
+                            "Color": "#ffe102",
+                            "ColorTo": "#ffa60b",
+                            "Gradient": "TopBottom",
+                            "PressColor": "#000000",
+                            "PressColorTo": "#00ff00",
+                            "Transparent": false
+                        },
+                        "ClassType": "RoundedButton",
+                        "Component": {
+                            "Active": true,
+                            "CornerRadius": 10,
+                            "Name": "RoundedButton_1",
+                            "StackOrder": 7,
+                            "Static": false,
+                            "Visible": true
+                        },
+                        "Geometry": {
+                            "Height": 36,
+                            "Left": 112,
+                            "Top": 17,
+                            "Width": 66
+                        },
+                        "Pen": {
+                            "Color": "#ffffff",
+                            "Width": 1
+                        },
+                        "Text": {
+                            "Caption": "BLUE!",
+                            "Color": "#000000",
+                            "Font": "Sans_Serif_16_159",
+                            "MaxLength": 0,
+                            "TextAlign": "AlignCenter",
+                            "VerticalText": false
+                        }
+                    }
+                },
+                {
+                    "Events": {
+                        "OnClick": null,
+                        "OnDown": "green_trigger",
+                        "OnPress": "",
+                        "OnUp": null
+                    },
+                    "Properties": {
+                        "Background": {
+                            "Color": "#ffe102",
+                            "ColorTo": "#ffa60b",
+                            "Gradient": "TopBottom",
+                            "PressColor": "#000000",
+                            "PressColorTo": "#00ff00",
+                            "Transparent": false
+                        },
+                        "ClassType": "RoundedButton",
+                        "Component": {
+                            "Active": true,
+                            "CornerRadius": 10,
+                            "Name": "RoundedButton_2",
+                            "StackOrder": 8,
+                            "Static": false,
+                            "Visible": true
+                        },
+                        "Geometry": {
+                            "Height": 36,
+                            "Left": 206,
+                            "Top": 17,
+                            "Width": 66
+                        },
+                        "Pen": {
+                            "Color": "#ffffff",
+                            "Width": 1
+                        },
+                        "Text": {
+                            "Caption": "GREEN!",
+                            "Color": "#000000",
+                            "Font": "Sans_Serif_16_159",
+                            "MaxLength": 0,
+                            "TextAlign": "AlignCenter",
+                            "VerticalText": false
+                        }
+                    }
+                },
+                {
+                    "Events": {
+                        "OnClick": null,
+                        "OnDown": "black_trigger",
+                        "OnPress": "",
+                        "OnUp": null
+                    },
+                    "Properties": {
+                        "Background": {
+                            "Color": "#ffe102",
+                            "ColorTo": "#ffa60b",
+                            "Gradient": "TopBottom",
+                            "PressColor": "#000000",
+                            "PressColorTo": "#00ff00",
+                            "Transparent": false
+                        },
+                        "ClassType": "RoundedButton",
+                        "Component": {
+                            "Active": true,
+                            "CornerRadius": 10,
+                            "Name": "RoundedButton_3",
+                            "StackOrder": 9,
+                            "Static": false,
+                            "Visible": true
+                        },
+                        "Geometry": {
+                            "Height": 36,
+                            "Left": 301,
+                            "Top": 17,
+                            "Width": 66
+                        },
+                        "Pen": {
+                            "Color": "#ffffff",
+                            "Width": 1
+                        },
+                        "Text": {
+                            "Caption": "BLACK!",
+                            "Color": "#000000",
+                            "Font": "Sans_Serif_16_159",
+                            "MaxLength": 0,
+                            "TextAlign": "AlignCenter",
+                            "VerticalText": false
+                        }
+                    }
+                },
+                {
+                    "Events": {
+                        "OnClick": null,
+                        "OnDown": "white_trigger",
+                        "OnPress": "",
+                        "OnUp": null
+                    },
+                    "Properties": {
+                        "Background": {
+                            "Color": "#ffe102",
+                            "ColorTo": "#ffa60b",
+                            "Gradient": "TopBottom",
+                            "PressColor": "#000000",
+                            "PressColorTo": "#00ff00",
+                            "Transparent": false
+                        },
+                        "ClassType": "RoundedButton",
+                        "Component": {
+                            "Active": true,
+                            "CornerRadius": 10,
+                            "Name": "RoundedButton_4",
+                            "StackOrder": 10,
+                            "Static": false,
+                            "Visible": true
+                        },
+                        "Geometry": {
+                            "Height": 36,
+                            "Left": 398,
+                            "Top": 17,
+                            "Width": 66
+                        },
+                        "Pen": {
+                            "Color": "#ffffff",
+                            "Width": 1
+                        },
+                        "Text": {
+                            "Caption": "WHITE!",
+                            "Color": "#000000",
+                            "Font": "Sans_Serif_16_159",
+                            "MaxLength": 0,
+                            "TextAlign": "AlignCenter",
+                            "VerticalText": false
+                        }
+                    }
+                },
+                {
+                    "Events": {
+                        "OnClick": null,
+                        "OnDown": "increase_trigger",
+                        "OnPress": null,
+                        "OnUp": null
+                    },
+                    "Properties": {
+                        "Background": {
+                            "Color": "#ffe102",
+                            "ColorTo": "#ffa60b",
+                            "Gradient": "TopBottom",
+                            "PressColor": "#000000",
+                            "PressColorTo": "#00ff00",
+                            "Transparent": false
+                        },
+                        "ClassType": "RoundedButton",
+                        "Component": {
+                            "Active": true,
+                            "CornerRadius": 10,
+                            "Name": "RoundedButton_6",
+                            "StackOrder": 12,
+                            "Static": false,
+                            "Visible": true
+                        },
+                        "Geometry": {
+                            "Height": 36,
+                            "Left": 368,
+                            "Top": 110,
+                            "Width": 93
+                        },
+                        "Pen": {
+                            "Color": "#ffffff",
+                            "Width": 1
+                        },
+                        "Text": {
+                            "Caption": "INCREASE!",
+                            "Color": "#000000",
+                            "Font": "Sans_Serif_16_159",
+                            "MaxLength": 0,
+                            "TextAlign": "AlignCenter",
+                            "VerticalText": false
+                        }
+                    }
+                },
+                {
+                    "Events": {
+                        "OnClick": null,
+                        "OnDown": "decrease_trigger",
+                        "OnPress": null,
+                        "OnUp": null
+                    },
+                    "Properties": {
+                        "Background": {
+                            "Color": "#ffe102",
+                            "ColorTo": "#ffa60b",
+                            "Gradient": "TopBottom",
+                            "PressColor": "#000000",
+                            "PressColorTo": "#00ff00",
+                            "Transparent": false
+                        },
+                        "ClassType": "RoundedButton",
+                        "Component": {
+                            "Active": true,
+                            "CornerRadius": 10,
+                            "Name": "RoundedButton_5",
+                            "StackOrder": 13,
+                            "Static": false,
+                            "Visible": true
+                        },
+                        "Geometry": {
+                            "Height": 36,
+                            "Left": 14,
+                            "Top": 113,
+                            "Width": 96
+                        },
+                        "Pen": {
+                            "Color": "#ffffff",
+                            "Width": 1
+                        },
+                        "Text": {
+                            "Caption": "DECREASE!",
+                            "Color": "#000000",
+                            "Font": "Sans_Serif_16_159",
+                            "MaxLength": 0,
+                            "TextAlign": "AlignCenter",
+                            "VerticalText": false
+                        }
+                    }
+                },
+                {
+                    "Events": {
+                    },
+                    "Properties": {
+                        "ClassType": "Label",
+                        "Component": {
+                            "Active": true,
+                            "Name": "Label_0",
+                            "StackOrder": 14,
+                            "Static": false,
+                            "Visible": true
+                        },
+                        "Geometry": {
+                            "Height": 27,
+                            "Left": 132,
+                            "Top": 209,
+                            "Width": 8
+                        },
+                        "Text": {
+                            "Caption": "",
+                            "Color": "#ffffff",
+                            "Font": "Segoe_UI_Regular_22_159_",
+                            "MaxLength": 0,
+                            "VerticalText": false
+                        }
+                    }
+                }
+            ],
+            "Properties": {
+                "Locked": false,
+                "Name": "Layer0",
+                "Visible": true
+            }
+        }
+    ],
+    "Properties": {
+        "Active": true,
+        "Color": "#5555ff",
+        "Grid": {
+            "Color": "#000000",
+            "Enabled": false,
+            "Size": 10,
+            "Snap": false,
+            "Type": "Dot"
+        },
+        "Name": "second_screen",
+        "ScreenHeight": 272,
+        "ScreenWidth": 480,
+        "Static": false
+    },
+    "Type": "Standard",
+    "Version": 2
+}

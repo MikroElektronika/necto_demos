@@ -5,7 +5,7 @@ This example demonstrates LCD library functionalities. In this demo, the text wi
 ---
 
 - **Author**      : MIKROE
-- **Version**     : 2.0.0.4
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ---

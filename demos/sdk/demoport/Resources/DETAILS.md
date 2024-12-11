@@ -6,7 +6,7 @@ Turn on switches for PORT LEDS in the BOARD SETUP section of your board to see L
 ---
 
 - **Author**      : MIKROE
-- **Version**     : 2.0.0.19
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ---

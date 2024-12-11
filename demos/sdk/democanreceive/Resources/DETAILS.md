@@ -5,7 +5,7 @@ Code developed on [UNI-DS v8](https://www.mikroe.com/uni-ds-v8) and it can be us
 ---
 
 - **Authors**     : MikroE https://github.com/MikroElektronika
-- **Version**     : 2.0.0.6
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ---

@@ -4,7 +4,7 @@ This example demonstrates echo server functionality. Observe UART/Application ou
 
 - **Authors**     : MikroE https://github.com/MikroElektronika
                   , ORYX EMBEDDED https://github.com/Oryx-Embedded/CycloneTCP
-- **Version**     : 2.0.0.8
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ## Hardware Support

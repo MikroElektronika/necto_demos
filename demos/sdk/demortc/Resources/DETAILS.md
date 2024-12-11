@@ -8,7 +8,7 @@ This is a simple example that utilizes mikroSDK 2.0 RTC driver library. In this 
   - [@juickar‌](http://github.com/juickar‌)
   - [@viziergr](https://www.github.com/viziergr)
   - [@aymericbiard](https://github.com/aymericbiard)
-- **Version**     : 2.0.0.6
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ---

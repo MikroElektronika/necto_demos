@@ -5,7 +5,7 @@ This is a simple example that utilizes mikroSDK 2.0 I2C driver library. In this 
 ---
 
 - **Author**      : MIKROE
-- **Version**     : 2.0.0.5
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ---

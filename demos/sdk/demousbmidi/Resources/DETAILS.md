@@ -6,7 +6,7 @@ Code developed on [UNI-DS v8](https://www.mikroe.com/uni-ds-v8) and it can be us
 
 - **Authors**     : MikroE https://github.com/MikroElektronika
                   , Hathach https://github.com/hathach/tinyusb
-- **Version**     : 2.0.0.7
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ---

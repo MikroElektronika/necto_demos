@@ -4,7 +4,7 @@ In this demo, the HTTP client running on MCU will connect to the HTTP server "ww
 
 - **Authors**     : MikroE https://github.com/MikroElektronika
                   , ORYX EMBEDDED https://github.com/Oryx-Embedded/CycloneTCP
-- **Version**     : 2.0.0.6
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ## Hardware Support

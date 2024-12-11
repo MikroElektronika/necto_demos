@@ -4,7 +4,7 @@ This example demonstrates HID Generic raw Input & Output. It will receive data f
 
 - **Authors**     : MikroE https://github.com/MikroElektronika
                   , Hathach https://github.com/hathach/tinyusb
-- **Version**     : 2.0.0.9
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ## Hardware Support

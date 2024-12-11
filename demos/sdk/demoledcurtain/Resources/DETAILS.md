@@ -7,7 +7,7 @@ to see PORT B LEDs light up and turn off in "curtain"-like motion.
 ---
 
 - **Author**      : MIKROE
-- **Version**     : 2.0.0.18
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ---

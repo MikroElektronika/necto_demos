@@ -5,7 +5,7 @@ It will allow a Device to be recognized as a MSC storage device when connected t
 
 - **Authors**     : MikroE https://github.com/MikroElektronika
                   , Hathach https://github.com/hathach/tinyusb
-- **Version**     : 2.0.0.8
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ## Hardware Support

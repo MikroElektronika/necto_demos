@@ -7,7 +7,7 @@ might not have the specified pin.
 ---
 
 - **Author**      : MIKROE
-- **Version**     : 2.0.0.30
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ---

@@ -1,0 +1,134 @@
+{
+    "Layers": [
+        {
+            "Components": [
+                {
+                    "Events": {
+                        "OnClick": null,
+                        "OnDown": null,
+                        "OnPress": null,
+                        "OnUp": null
+                    },
+                    "Properties": {
+                        "ClassType": "Image",
+                        "Component": {
+                            "Active": true,
+                            "Image": "mikroe266x72",
+                            "Name": "Image_0",
+                            "StackOrder": 1,
+                            "Static": true,
+                            "Visible": true
+                        },
+                        "Geometry": {
+                            "Height": 72,
+                            "Left": 101,
+                            "Top": 57,
+                            "Width": 266
+                        }
+                    }
+                },
+                {
+                    "Events": {
+                    },
+                    "Properties": {
+                        "ClassType": "Label",
+                        "Component": {
+                            "Active": true,
+                            "Name": "Label_0",
+                            "StackOrder": 2,
+                            "Static": false,
+                            "Visible": true
+                        },
+                        "Geometry": {
+                            "Height": 27,
+                            "Left": 92,
+                            "Top": 10,
+                            "Width": 183
+                        },
+                        "Text": {
+                            "Caption": "This Demo was made by",
+                            "Color": "#ffffff",
+                            "Font": "Segoe_UI_Regular_26_159_",
+                            "MaxLength": 0,
+                            "VerticalText": false
+                        }
+                    }
+                },
+                {
+                    "Events": {
+                    },
+                    "Properties": {
+                        "ClassType": "Label",
+                        "Component": {
+                            "Active": true,
+                            "Name": "Label_1",
+                            "StackOrder": 3,
+                            "Static": false,
+                            "Visible": true
+                        },
+                        "Geometry": {
+                            "Height": 27,
+                            "Left": 42,
+                            "Top": 136,
+                            "Width": 280
+                        },
+                        "Text": {
+                            "Caption": "It shows the usage of Designer Tool in",
+                            "Color": "#ffffff",
+                            "Font": "Segoe_UI_Regular_24_159_",
+                            "MaxLength": 0,
+                            "VerticalText": false
+                        }
+                    }
+                },
+                {
+                    "Events": {
+                        "OnClick": null,
+                        "OnDown": null,
+                        "OnPress": null,
+                        "OnUp": null
+                    },
+                    "Properties": {
+                        "ClassType": "Image",
+                        "Component": {
+                            "Active": true,
+                            "Image": "necto_studio_logo282x58",
+                            "Name": "Image_1",
+                            "StackOrder": 4,
+                            "Static": true,
+                            "Visible": true
+                        },
+                        "Geometry": {
+                            "Height": 58,
+                            "Left": 97,
+                            "Top": 187,
+                            "Width": 282
+                        }
+                    }
+                }
+            ],
+            "Properties": {
+                "Locked": false,
+                "Name": "Layer0",
+                "Visible": true
+            }
+        }
+    ],
+    "Properties": {
+        "Active": true,
+        "Color": "#000000",
+        "Grid": {
+            "Color": "#000000",
+            "Enabled": false,
+            "Size": 10,
+            "Snap": false,
+            "Type": "Dot"
+        },
+        "Name": "main_screen",
+        "ScreenHeight": 272,
+        "ScreenWidth": 480,
+        "Static": false
+    },
+    "Type": "Standard",
+    "Version": 2
+}

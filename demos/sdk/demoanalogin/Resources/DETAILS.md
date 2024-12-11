@@ -5,7 +5,7 @@ This is a simple example of analog-digital converter that utilizes mikroSDK 2.0 
 ---
 
 - **Author**      : MIKROE
-- **Version**     : 2.0.0.22
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ---

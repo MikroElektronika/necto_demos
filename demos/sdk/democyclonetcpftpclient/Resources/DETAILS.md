@@ -4,7 +4,7 @@ This example demonstrates how FTP client running on MCU reads a file from remote
 
 - **Authors**     : MikroE https://github.com/MikroElektronika
                   , ORYX EMBEDDED https://github.com/Oryx-Embedded/CycloneTCP
-- **Version**     : 2.0.0.7
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ## Hardware Support

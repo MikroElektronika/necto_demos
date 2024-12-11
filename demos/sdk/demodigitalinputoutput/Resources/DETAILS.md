@@ -7,7 +7,7 @@ follow the steps and see how the LEDs on port A respond to pushing buttons.
 ---
 
 - **Author**      : MIKROE
-- **Version**     : 2.0.0.20
+- **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ---

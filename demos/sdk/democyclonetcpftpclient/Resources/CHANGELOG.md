@@ -1,13 +1,21 @@
-## Changelog
+# Changelog
 
-### Version 2.0.0.7
- - Added support for XC32
+## Version 3.0.0
 
-### Version 2.0.0.6
- - Added recursive inclusion for linker scripts and startup files into the CMakeLists.txt.
+- New structure
 
-### Version 2.0.0.5
- - Added preinit.
+## Version 2.0.0.7
 
-### Version 2.0.0.3
- - Initial release
+- Added support for XC32
+
+## Version 2.0.0.6
+
+- Added recursive inclusion for linker scripts and startup files into the CMakeLists.txt.
+
+## Version 2.0.0.5
+
+- Added preinit.
+
+## Version 2.0.0.3
+
+- Initial release
