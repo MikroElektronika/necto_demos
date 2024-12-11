@@ -15,10 +15,6 @@ on:
         type: boolean
         description: Select to upload all demos in repository
         default: false
-      dbp:
-        type: boolean
-        default: true
-        description: If selected, will upload for NECTO 7.1.0+ versions
       index:
         type: choice
         description: If releasing for Legacy, choose where to index to
@@ -56,9 +52,4 @@ jobs:
       - name: Package and upload demos
         run: |
           echo "Uploading demos..."
-          python -u scripts/workflows/demos_upload.py ${{ github.repository }} ${{ steps.app-token.outputs.token }} ${{ github.event.inputs.release_version }} ${{ secrets.PACKER_DOWNLOAD_LINK }} ${{ secrets.PACKER_USERNAME }} ${{ secrets.PACKER_PASSWORD }} ${{ secrets.PACKER_URL }} "${{ github.event.inputs.demo_names }}" "--all_demos" "${{ github.event.inputs.demos_all }}" "--dbp" "${{ github.event.inputs.dbp }}"
-
-      - name: Index legacy packages
-        if : ${{ github.event.inputs.dbp == 'false' }}
-        run: |
-          echo "TODO - implement"
+          python -u scripts/workflows/demos_upload.py ${{ github.repository }} ${{ steps.app-token.outputs.token }} ${{ github.event.inputs.release_version }} ${{ secrets.PACKER_DOWNLOAD_LINK }} ${{ secrets.PACKER_USERNAME }} ${{ secrets.PACKER_PASSWORD }} ${{ secrets.PACKER_URL }} "${{ github.event.inputs.demo_names }}" "--all_demos" "${{ github.event.inputs.demos_all }}"

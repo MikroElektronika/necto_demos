@@ -67,8 +67,7 @@ def package_and_upload_dbp(package_in, package_out, **kwargs):
         print("%sUpload failed for %s with error: %s\n" % (utils.Colors.FAIL, package_out, result['hydra:description']))
     else:
         print("%sUpload successful for %s\n" % (utils.Colors.OKGREEN, package_out))
-        os.rename(package_path, package_path.replace('.zip', '.dbp.zip'))
-        package_path = package_path.replace('.zip', '.dbp.zip')
+        package_path = package_out
         utils.raise_exception(is_status_success(result['params']))
 
     return package_path
@@ -119,11 +118,9 @@ if __name__ == "__main__":
     ## Parse the arguments
     args = parser.parse_args()
 
-    ## If true, converts current demos to new DBP structure
-    demo_dir = os.path.join(os.getcwd(), 'demos')
-    if (args.dbp):
-        demo_dir = os.path.join(os.getcwd(), 'demos_dbp')
-        utils.call_python_script('scripts/dbp/main.py')
+    ## Converts current demos to new DBP structure
+    demo_dir = os.path.join(os.getcwd(), 'demos_dbp')
+    utils.call_python_script('scripts/dbp/main.py')
 
     ## If all demos requested, get full list
     demo_regex = args.demo
