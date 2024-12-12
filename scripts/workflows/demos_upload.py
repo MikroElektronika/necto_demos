@@ -118,8 +118,9 @@ if __name__ == "__main__":
     ## Parse the arguments
     args = parser.parse_args()
 
-    ## Converts current demos to new DBP structure
-    demo_dir = os.path.join(os.getcwd(), 'demos')
+    ## Copies current demos for further editing
+    demo_dir = os.path.join(os.getcwd(), 'demos_modified')
+    utils.copy_files_and_folders(os.path.join(os.getcwd(), 'demos'), demo_dir)
 
     ## If ever needed to convert legacy structured demos to new structure,
     ## this is an example call of the function.
