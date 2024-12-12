@@ -2,6 +2,7 @@ demos_modified
 .vscode
 __pycache__
 *.7z
+!demos_legacy.7z
 *.zip
 output
 demos_dbp

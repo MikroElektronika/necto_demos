@@ -119,8 +119,14 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     ## Converts current demos to new DBP structure
-    demo_dir = os.path.join(os.getcwd(), 'demos_dbp')
-    utils.call_python_script('scripts/dbp/main.py')
+    demo_dir = os.path.join(os.getcwd(), 'demos')
+
+    ## If ever needed to convert legacy structured demos to new structure,
+    ## this is an example call of the function.
+    # utils.call_python_script('scripts/dbp/main.py')
+
+    ## Set appropriate copyright year
+    utils.replace_copyright_year(demo_dir)
 
     ## If all demos requested, get full list
     demo_regex = args.demo

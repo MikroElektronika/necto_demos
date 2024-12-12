@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "Analog Input Demo"
+            }
+        ]
+    },
+    "display_name": "Analog Input Demo",
+    "name": "mikroe.demo.sdk.analogin",
+    "type": "project",
+    "version": "3.0.0"
+}

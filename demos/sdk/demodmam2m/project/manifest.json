@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "DMA Memory to Memory Demo"
+            }
+        ]
+    },
+    "display_name": "DMA Memory to Memory Demo",
+    "name": "mikroe.demo.sdk.dma.m2m",
+    "type": "project",
+    "version": "3.0.0"
+}

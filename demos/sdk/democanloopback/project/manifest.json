@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "CAN Loopback Mode Demo"
+            }
+        ]
+    },
+    "display_name": "CAN Loopback Mode Demo",
+    "name": "mikroe.demo.sdk.can.loopback",
+    "type": "project",
+    "version": "3.0.0"
+}

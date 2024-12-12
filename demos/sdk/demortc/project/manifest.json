@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "RTC Demo"
+            }
+        ]
+    },
+    "display_name": "RTC Demo",
+    "name": "mikroe.demo.sdk.rtc",
+    "type": "project",
+    "version": "3.0.0"
+}

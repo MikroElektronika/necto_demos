@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "CAN Transmit Demo"
+            }
+        ]
+    },
+    "display_name": "CAN Transmit Demo",
+    "name": "mikroe.demo.sdk.can.transmit",
+    "type": "project",
+    "version": "3.0.0"
+}

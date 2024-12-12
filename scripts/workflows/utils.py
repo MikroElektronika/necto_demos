@@ -1,6 +1,6 @@
 import os, io, sys, json, \
        py7zr, requests, subprocess, \
-       zipfile, shutil
+       zipfile, shutil, datetime
 
 class Colors:
     HEADER = '\033[95m'
@@ -211,3 +211,32 @@ def copy_files_and_folders(src, dst):
             src_file = os.path.join(root, file)
             dst_file = os.path.join(dst_dir, file)
             shutil.copy2(src_file, dst_file)
+
+def replace_copyright_year(root_dir):
+    """
+    Recursively replace occurrences of '${COPYRIGHT_YEAR}' in all files under the specified directory
+    with the current year.
+
+    :param root_dir: The root directory to start searching and replacing in.
+    """
+    current_year = str(datetime.datetime.now().year)
+
+    for dirpath, dirnames, filenames in os.walk(root_dir):
+        for filename in filenames:
+            file_path = os.path.join(dirpath, filename)
+
+            # Read the file and replace occurrences of '${COPYRIGHT_YEAR}'
+            try:
+                with open(file_path, 'r', encoding='utf-8') as file:
+                    content = file.read()
+
+                if '${COPYRIGHT_YEAR}' in content:
+                    new_content = content.replace('${COPYRIGHT_YEAR}', current_year)
+
+                    # Write the updated content back to the file
+                    with open(file_path, 'w', encoding='utf-8') as file:
+                        file.write(new_content)
+
+                    print(f"Updated: {file_path}")
+            except (OSError, UnicodeDecodeError) as e:
+                print(f"Failed to process {file_path}: {e}")

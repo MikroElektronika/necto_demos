@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "SPI Demo"
+            }
+        ]
+    },
+    "display_name": "SPI Demo",
+    "name": "mikroe.demo.sdk.spi",
+    "type": "project",
+    "version": "3.0.0"
+}

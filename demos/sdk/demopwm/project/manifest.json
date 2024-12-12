@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "PWM Demo"
+            }
+        ]
+    },
+    "display_name": "PWM Demo",
+    "name": "mikroe.demo.sdk.pwmdemo",
+    "type": "project",
+    "version": "3.0.0"
+}

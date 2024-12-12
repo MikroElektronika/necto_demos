@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "USB HID Demo"
+            }
+        ]
+    },
+    "display_name": "USB HID Demo",
+    "name": "mikroe.demo.sdk.usbhiddemo",
+    "type": "project",
+    "version": "3.0.0"
+}

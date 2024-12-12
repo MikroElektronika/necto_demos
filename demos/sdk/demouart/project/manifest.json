@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "UART Demo"
+            }
+        ]
+    },
+    "display_name": "UART Demo",
+    "name": "mikroe.demo.sdk.uart",
+    "type": "project",
+    "version": "3.0.0"
+}

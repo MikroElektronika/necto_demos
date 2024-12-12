@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "LCD Demo"
+            }
+        ]
+    },
+    "display_name": "LCD Demo",
+    "name": "mikroe.demo.sdk.lcddemo",
+    "type": "project",
+    "version": "3.0.0"
+}

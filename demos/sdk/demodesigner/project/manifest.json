@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "Designer Tool Demo"
+            }
+        ]
+    },
+    "display_name": "Designer Tool Demo",
+    "name": "mikroe.demo.sdk.designer",
+    "type": "project",
+    "version": "3.0.0"
+}

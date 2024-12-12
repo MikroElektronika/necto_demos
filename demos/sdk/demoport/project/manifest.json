@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "Port Demo"
+            }
+        ]
+    },
+    "display_name": "Port Demo",
+    "name": "mikroe.demo.sdk.portdemo",
+    "type": "project",
+    "version": "3.0.0"
+}

@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "USB-MIDI Demo"
+            }
+        ]
+    },
+    "display_name": "USB-MIDI Demo",
+    "name": "mikroe.demo.sdk.usbmidi",
+    "type": "project",
+    "version": "3.0.0"
+}

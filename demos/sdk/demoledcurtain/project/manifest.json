@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "LED Curtain Demo"
+            }
+        ]
+    },
+    "display_name": "LED Curtain Demo",
+    "name": "mikroe.demo.sdk.ledcurtain",
+    "type": "project",
+    "version": "3.0.0"
+}

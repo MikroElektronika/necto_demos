@@ -1,0 +1,14 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "LED Blinking Demo"
+            }
+        ]
+    },
+    "display_name": "LED Blinking Demo",
+    "name": "mikroe.demo.sdk.ledblinking",
+    "type": "project",
+    "version": "3.0.0"
+}
