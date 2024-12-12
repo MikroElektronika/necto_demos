@@ -3,9 +3,9 @@
 This is a simple example that utilizes mikroSDK 2.0 RTC driver library. In this demo, we demonstrate how to configure and enable RTC module and use its functionalities like start, stop, set_time, reset and system_reset.
 
 - **Authors**
-  - [@MikroE](https://github.com/MikroElektronika)
+  - [MIKROE](https://github.com/MikroElektronika)
   - [@huchonar](https://github.com/huchonar)
-  - [@juickar‌](http://github.com/juickar‌)
+  - [@juickar‌](http://github.com/juickar)
   - [@viziergr](https://www.github.com/viziergr)
   - [@aymericbiard](https://github.com/aymericbiard)
 - **Version**     : 3.0.0

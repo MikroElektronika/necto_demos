@@ -4,7 +4,7 @@ This is a simple DMA Memory to Memory example that utilizes mikroSDK 2.0 DMA dri
 
 ---
 
-- **Author**      : MIKROE
+- **Authors**     : [MIKROE](https://github.com/MikroElektronika)
 - **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 

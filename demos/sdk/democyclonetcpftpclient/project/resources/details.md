@@ -2,8 +2,8 @@
 
 This example demonstrates how FTP client running on MCU reads a file from remote FTP server. It will connect to the FTP server "test.rebex.net", port number 21, then log in using username: "demo" and password: "password", and open the file "readme.txt". File will be read and its contents will be written over UART/Application output.
 
-- **Authors**     : MikroE https://github.com/MikroElektronika
-                  , ORYX EMBEDDED https://github.com/Oryx-Embedded/CycloneTCP
+- **Authors**     : [MikroE](https://github.com/MikroElektronika)
+                  , [ORYX EMBEDDED](https://github.com/Oryx-Embedded/CycloneTCP)
 - **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 

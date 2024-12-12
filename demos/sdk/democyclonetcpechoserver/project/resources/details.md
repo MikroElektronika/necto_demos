@@ -2,8 +2,8 @@
 
 This example demonstrates echo server functionality. Observe UART/Application output and wait until server address is resolved, singnaling that echo server running on the MCU is ready to be used. Connect to the server with Tera Term or any other terminal of your choice. Set Host: to either "echo-server-demo" or the IP address from UART/Application output, and use Port: "7". Write something into the terminal, and observe it being echoed back by the echo server.
 
-- **Authors**     : MikroE https://github.com/MikroElektronika
-                  , ORYX EMBEDDED https://github.com/Oryx-Embedded/CycloneTCP
+- **Authors**     : [MikroE](https://github.com/MikroElektronika)
+                  , [ORYX EMBEDDED](https://github.com/Oryx-Embedded/CycloneTCP)
 - **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 

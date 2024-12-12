@@ -2,8 +2,8 @@
 
 This example demonstrates HID Generic raw Input & Output. It will receive data from Host (In endpoint) and echo back (Out endpoint). HID Report descriptor uses vendor for usage page (using template TUD_HID_REPORT_DESC_GENERIC_INOUT). Connect to a USB HID terminal and send data to the connected device.
 
-- **Authors**     : MikroE https://github.com/MikroElektronika
-                  , Hathach https://github.com/hathach/tinyusb
+- **Authors**     : [MikroE](https://github.com/MikroElektronika)
+                  , [Hathach](https://github.com/hathach/tinyusb)
 - **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 

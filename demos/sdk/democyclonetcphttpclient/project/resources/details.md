@@ -2,8 +2,8 @@
 
 In this demo, the HTTP client running on MCU will connect to the HTTP server "www.httpbin.org", port number 80. Client will then send POST request to HTTP server whith header containing, Host: "www.httpbin.org", User-Agent: "Mozilla/5.0" ,Content-Type: "text/plain", and Transfer-Encoding: "chunked", and parameters/aruments, param1 and param2, having respective values of "value1" and "value2". Body of the message is plain text "Hello World!". Response from the HTTP server will be read, echoing back sent data in json format, and will be written over UART/Application output.
 
-- **Authors**     : MikroE https://github.com/MikroElektronika
-                  , ORYX EMBEDDED https://github.com/Oryx-Embedded/CycloneTCP
+- **Authors**     : [MikroE](https://github.com/MikroElektronika)
+                  , [ORYX EMBEDDED](https://github.com/Oryx-Embedded/CycloneTCP)
 - **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 

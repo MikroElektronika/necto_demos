@@ -6,7 +6,7 @@ might not have the specified pin.
 
 ---
 
-- **Author**      : MIKROE
+- **Authors**     : [MIKROE](https://github.com/MikroElektronika)
 - **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 

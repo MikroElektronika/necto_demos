@@ -2,7 +2,7 @@
 
 This is a simple example that utilizes mikroSDK 2.0 PWM driver library. In this demo, we demonstrate how to configure and enable PWM module and adjust the duty cycle using buttons. Increasing the duty cycle results in a brighter LED illumination, while decreasing it reduces the brightness.
 
-- **Author**      : MIKROE
+- **Authors**     : [MIKROE](https://github.com/MikroElektronika)
 - **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 

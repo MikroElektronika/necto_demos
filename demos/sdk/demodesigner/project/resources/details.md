@@ -2,7 +2,7 @@
 
 This Demo shows how to use Buttons, Images, Labels and Progress Bar components of Designer Tool in NECTOStudio IDE. First it displays the intro screen and then it shows application screen - you can press Buttons to change the screen color and increase the Progress Bar value. When Progress Bar value reaches 100% Demo starts from beginning.
 
-- **Authors**     : MikroE
+- **Authors**     : [MikroE](https://github.com/MikroElektronika)
 - **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 

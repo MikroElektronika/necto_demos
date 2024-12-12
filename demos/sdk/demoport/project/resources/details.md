@@ -5,7 +5,7 @@ Turn on switches for PORT LEDS in the BOARD SETUP section of your board to see L
 
 ---
 
-- **Author**      : MIKROE
+- **Authors**     : [MIKROE](https://github.com/MikroElektronika)
 - **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 

@@ -4,7 +4,7 @@ This is a simple UART echo example that utilizes mikroSDK 2.0 UART driver librar
 
 ---
 
-- **Author**      : MIKROE
+- **Authors**     : [MIKROE](https://github.com/MikroElektronika)
 - **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 

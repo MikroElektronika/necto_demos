@@ -4,7 +4,7 @@ This example demonstrates LCD library functionalities. In this demo, the text wi
 
 ---
 
-- **Author**      : MIKROE
+- **Authors**     : [MIKROE](https://github.com/MikroElektronika)
 - **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 

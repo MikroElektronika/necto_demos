@@ -3,8 +3,8 @@
 This example demonstrates the use of USB CDC MassStorage Class demo.
 It will allow a Device to be recognized as a MSC storage device when connected to PC via USB.
 
-- **Authors**     : MikroE https://github.com/MikroElektronika
-                  , Hathach https://github.com/hathach/tinyusb
+- **Authors**     : [MikroE](https://github.com/MikroElektronika)
+                  , [Hathach](https://github.com/hathach/tinyusb)
 - **Version**     : 3.0.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
