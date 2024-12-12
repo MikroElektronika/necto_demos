@@ -12,10 +12,10 @@ This example demonstrates LCD library functionalities. In this demo, the text wi
 
 ## Hardware Support
 
-- Put LCD display into LCD socket.
-  - ![image](https://download.mikroe.com/images/mikrosdk/v2/demos/demolcd/demo-lcd-socket.png)
-- Put LCD switches in ON position.
-  - ![image](https://download.mikroe.com/images/mikrosdk/v2/demos/demolcd/demo-lcd-switch.png)
+- Put LCD display into LCD socket and LCD switches in ON position.
+
+![image](https://download.mikroe.com/images/mikrosdk/v2/demos/demolcd/demo-lcd-socket.png)
+![image](https://download.mikroe.com/images/mikrosdk/v2/demos/demolcd/demo-lcd-switch.png)
 
 ---
 
