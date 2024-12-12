@@ -249,3 +249,29 @@ def replace_copyright_year(root_dir, dry_run=False):
                         print(f"Updated: {file_path}")
             except (OSError, UnicodeDecodeError) as e:
                 print(f"Failed to process {file_path}: {e}")
+
+def manifests_add_category(root_dir, category):
+    # Walk through the directory to find all 'manifest.json' files
+    for dirpath, _, filenames in os.walk(root_dir):
+        if 'manifest.json' in filenames:
+            manifest_path = os.path.join(dirpath, 'manifest.json')
+            try:
+                # Open the manifest.json file and load its contents
+                with open(manifest_path, 'r') as file:
+                    manifest_data = json.load(file)
+
+                # Add the 'category' field if it's not already there
+                if 'category' not in manifest_data:
+                    manifest_data['category'] = category
+                    print(f"Added 'category' to: {manifest_path}")
+
+                    # Save the updated manifest.json
+                    with open(manifest_path, 'w') as file:
+                        json.dump(manifest_data, file, indent=4)
+                else:
+                    print(f"'category' already exists in: {manifest_path}")
+
+            except json.JSONDecodeError:
+                print(f"Error reading JSON from {manifest_path}")
+            except Exception as e:
+                print(f"An error occurred with {manifest_path}: {e}")

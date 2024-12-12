@@ -43,7 +43,7 @@ def package_and_upload_dbp(package_in, package_out, **kwargs):
     result = utils.fetch_json_from_output(
         utils.capture_stdout(
             utils.call_python_script,
-            'tmp/packer/main.py',
+            'tmp/click_zip_packer/src/main.py',
             'pack', '--input', package_in,
             '--output', package_out
         )
@@ -55,7 +55,7 @@ def package_and_upload_dbp(package_in, package_out, **kwargs):
     result = utils.fetch_json_from_output(
         utils.capture_stdout(
             utils.call_python_script,
-            'tmp/packer/main.py',
+            'tmp/click_zip_packer/src/main.py',
             'upload', '--input', result['params']['output_path'],
             '--username', kwargs['username'],
             '--password', kwargs['password'],
@@ -121,6 +121,9 @@ if __name__ == "__main__":
     ## Copies current demos for further editing
     demo_dir = os.path.join(os.getcwd(), 'demos_modified')
     utils.copy_files_and_folders(os.path.join(os.getcwd(), 'demos'), demo_dir)
+
+    ## Add category to manifest if not present already
+    utils.manifests_add_category(demo_dir, 'NECTO Demo')
 
     ## If ever needed to convert legacy structured demos to new structure,
     ## this is an example call of the function.
