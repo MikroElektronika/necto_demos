@@ -32,6 +32,7 @@ This code was developed on *UNI-DS* v8 board. For this hardware to work accordin
 
 ![easypic_v8_can_connector](https://download.mikroe.com/images/mikrosdk/v2/demos/democan/demo-can-pins-mcu-card.png)
 ![image](https://download.mikroe.com/images/mikrosdk/v2/demos/democan/demo-can-pins-easypic-board.png)
+
 4. Alternatively, instead of soldering additional connectors to your existing MCU cards, you could use [CAN-1 Boards](https://www.mikroe.com/can-1-board)
 
 Note: You might need terminal resistence (aproximately 120 Ohms). This is hardware dependent.
