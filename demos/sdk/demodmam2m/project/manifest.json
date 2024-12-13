@@ -10,5 +10,7 @@
     "display_name": "DMA Memory to Memory Demo",
     "name": "mikroe.demo.sdk.dma.m2m",
     "type": "project",
-    "version": "3.0.0"
+    "version": "3.0.0",
+    "demo": true,
+    "github_link": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/sdk/demodmam2m/project"
 }

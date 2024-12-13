@@ -83,7 +83,7 @@ async def main(gh_instance, demos, args, upload_api):
                 )
             ),
             username = args.packer_username,
-            pasword = args.packer_password,
+            password = args.packer_password,
             url = args.packer_url
         )
 
@@ -123,7 +123,8 @@ if __name__ == "__main__":
     utils.copy_files_and_folders(os.path.join(os.getcwd(), 'demos'), demo_dir)
 
     ## Add category to manifest if not present already
-    utils.manifests_add_category(demo_dir, 'NECTO Demo')
+    ## Should be handled automacially by NECTO at this point
+    # utils.manifests_add_category(demo_dir, 'NECTO Demo')
 
     ## If ever needed to convert legacy structured demos to new structure,
     ## this is an example call of the function.

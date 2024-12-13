@@ -1,0 +1,16 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "CAN Demo Pack"
+            }
+        ]
+    },
+    "display_name": "CAN Demo Pack",
+    "name": "mikroe.demo.sdk.can.pack",
+    "type": "project",
+    "version": "3.0.0",
+    "demo": true,
+    "github_link": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/sdk/democan/project"
+}

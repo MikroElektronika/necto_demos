@@ -10,5 +10,7 @@
     "display_name": "Designer Tool Demo",
     "name": "mikroe.demo.sdk.designer",
     "type": "project",
-    "version": "3.0.0"
+    "version": "3.0.0",
+    "demo": true,
+    "github_link": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/sdk/demodesigner/project"
 }

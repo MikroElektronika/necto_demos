@@ -1,0 +1,16 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "GPIO Demo Pack"
+            }
+        ]
+    },
+    "display_name": "GPIO Demo Pack",
+    "name": "mikroe.demo.sdk.gpio.pack",
+    "type": "project",
+    "version": "3.0.0",
+    "demo": true,
+    "github_link": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/sdk/demogpio/project"
+}

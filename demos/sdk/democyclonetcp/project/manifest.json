@@ -1,0 +1,16 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "CycloneTCP Demo Pack"
+            }
+        ]
+    },
+    "display_name": "CycloneTCP Demo Pack",
+    "name": "mikroe.demo.sdk.cyclonetcp.pack",
+    "type": "project",
+    "version": "3.0.0",
+    "demo": true,
+    "github_link": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/sdk/democyclonetcp/project"
+}
