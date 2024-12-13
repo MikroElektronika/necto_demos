@@ -72,10 +72,8 @@ def package_and_upload_dbp(package_in, package_out, **kwargs):
                 print("%sUpload failed for %s with error: %s\n" % (utils.Colors.FAIL, package_out, result['detail']))
         else:
             print("%sUpload successful for %s\n" % (utils.Colors.OKGREEN, package_out))
-            package_path = package_out
     else:
         print("%sUpload successful for %s\n" % (utils.Colors.OKGREEN, package_out))
-        package_path = package_out
         utils.raise_exception(is_status_success(result['params']))
 
     return package_path
