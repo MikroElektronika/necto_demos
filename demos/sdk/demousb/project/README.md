@@ -1,4 +1,4 @@
-# CAN DEMO PACK
+# USB DEMO PACK
 
 ---
 
