@@ -65,6 +65,14 @@ def package_and_upload_dbp(package_in, package_out, **kwargs):
     if 'hydra:description' in result:
         package_path = None
         print("%sUpload failed for %s with error: %s\n" % (utils.Colors.FAIL, package_out, result['hydra:description']))
+    elif 'detail' in result:
+        if 'title' in result:
+            if 'error' in result['title']:
+                package_path = None
+                print("%sUpload failed for %s with error: %s\n" % (utils.Colors.FAIL, package_out, result['detail']))
+        else:
+            print("%sUpload successful for %s\n" % (utils.Colors.OKGREEN, package_out))
+            package_path = package_out
     else:
         print("%sUpload successful for %s\n" % (utils.Colors.OKGREEN, package_out))
         package_path = package_out

@@ -12,5 +12,5 @@
     "type": "project",
     "version": "3.0.0",
     "demo": true,
-    "github_link": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/sdk/demolcd/project"
+    "link_github": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/sdk/demolcd/project"
 }
