@@ -1,0 +1,133 @@
+{
+    "children": [
+        {
+            "events": {
+                "LV_EVENT_CLICKED": null,
+                "LV_EVENT_DEFOCUSED": null,
+                "LV_EVENT_DELETE": null,
+                "LV_EVENT_FOCUSED": null,
+                "LV_EVENT_PRESSED": null,
+                "LV_EVENT_PRESSING": null,
+                "LV_EVENT_RELEASED": null,
+                "LV_EVENT_SCROLL": null,
+                "LV_EVENT_SCROLL_BEGIN": null,
+                "LV_EVENT_SCROLL_END": null,
+                "LV_EVENT_SIZE_CHANGED": null,
+                "LV_EVENT_STYLE_CHANGED": null
+            },
+            "geometry": {
+                "height": 85,
+                "width": 252,
+                "x": 117,
+                "y": 61
+            },
+            "image": {
+                "height": 60,
+                "image_alias": "mikroe_logo_png_252x85",
+                "stretched": true,
+                "width": 60
+            },
+            "name": "img_0",
+            "stack_order": 0,
+            "styles": [
+                {
+                    "background": {
+                        "bg_color": "#ffffff",
+                        "bg_grad_color": "#000000",
+                        "bg_grad_dir": "LV_GRAD_DIR_NONE",
+                        "bg_opa": 0
+                    },
+                    "border": {
+                        "border_color": "#000000",
+                        "border_opa": 100,
+                        "border_post": false,
+                        "border_width": 0,
+                        "radius": 0
+                    },
+                    "part": "LV_PART_MAIN",
+                    "shadow": {
+                        "shadow_color": "#000000",
+                        "shadow_ofs_x": 0,
+                        "shadow_ofs_y": 0,
+                        "shadow_opa": 100,
+                        "shadow_spread": 0,
+                        "shadow_width": 0
+                    },
+                    "state": "LV_STATE_DEFAULT"
+                }
+            ],
+            "type": "img"
+        },
+        {
+            "events": {
+                "LV_EVENT_CLICKED": null,
+                "LV_EVENT_DEFOCUSED": null,
+                "LV_EVENT_DELETE": null,
+                "LV_EVENT_FOCUSED": null,
+                "LV_EVENT_PRESSED": null,
+                "LV_EVENT_PRESSING": null,
+                "LV_EVENT_RELEASED": null,
+                "LV_EVENT_SCROLL": null,
+                "LV_EVENT_SCROLL_BEGIN": null,
+                "LV_EVENT_SCROLL_END": null,
+                "LV_EVENT_SIZE_CHANGED": null,
+                "LV_EVENT_STYLE_CHANGED": null
+            },
+            "geometry": {
+                "height": 74,
+                "width": 80,
+                "x": 201,
+                "y": 156
+            },
+            "image": {
+                "height": 60,
+                "image_alias": "lvglgui_logo_jpeg_80x74",
+                "stretched": true,
+                "width": 60
+            },
+            "name": "img_1",
+            "stack_order": 0,
+            "styles": [
+                {
+                    "background": {
+                        "bg_color": "#ffffff",
+                        "bg_grad_color": "#000000",
+                        "bg_grad_dir": "LV_GRAD_DIR_NONE",
+                        "bg_opa": 0
+                    },
+                    "border": {
+                        "border_color": "#000000",
+                        "border_opa": 100,
+                        "border_post": false,
+                        "border_width": 0,
+                        "radius": 0
+                    },
+                    "part": "LV_PART_MAIN",
+                    "shadow": {
+                        "shadow_color": "#000000",
+                        "shadow_ofs_x": 0,
+                        "shadow_ofs_y": 0,
+                        "shadow_opa": 100,
+                        "shadow_spread": 0,
+                        "shadow_width": 0
+                    },
+                    "state": "LV_STATE_DEFAULT"
+                }
+            ],
+            "type": "img"
+        }
+    ],
+    "name": "main_screen",
+    "styles": [
+        {
+            "background": {
+                "bg_color": "#ffffff",
+                "bg_grad_color": "#000000",
+                "bg_grad_dir": "LV_GRAD_DIR_NONE"
+            },
+            "part": "LV_PART_MAIN",
+            "state": "LV_STATE_DEFAULT"
+        }
+    ],
+    "type": "obj"
+}

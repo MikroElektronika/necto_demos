@@ -1,0 +1,90 @@
+cmake_minimum_required(VERSION 3.19)
+
+if (${TOOLCHAIN_LANGUAGE} MATCHES "MikroC")
+    project(demo_lvgl_widgets LANGUAGES MikroC)
+else()
+    project(demo_lvgl_widgets LANGUAGES C ASM)
+endif()
+
+include(mikroeUtils)
+include(${CMAKE_CURRENT_SOURCE_DIR}/1ms_timer/TimerHeaderConfig.cmake)
+
+set(PROJECT_TYPE "lvgl_designer" CACHE STRING "" FORCE)
+
+add_executable(demo_lvgl_widgets
+    main.c
+    1ms_Timer.h
+    resource.mres
+    main_screen.mscr
+    main_screen.c
+    main_screen.h
+    driver/display_lvgl.h
+    driver/lv_port_indev.h
+    driver/display_lvgl.c
+    driver/lv_port_indev.c
+    widgets/lv_demo_widgets.c
+    widgets/lv_demo_widgets.h
+    widgets/assets/img_lvgl_logo.c
+)
+
+set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS resource.mres)
+
+find_package(MikroC.Core REQUIRED)
+find_package_me(MikroSDK.LVGL.Common REQUIRED)
+find_package_me(MikroSDK.GraphicLibrary REQUIRED)
+find_package_me(MikroSDK.LVGL)
+
+lvgl_designer_generator(demo_lvgl_widgets resource.mres main_screen.mscr)
+
+target_link_libraries(demo_lvgl_widgets
+    PUBLIC
+        MikroC.Core
+        MikroSDK.LVGL
+        MikroSDK.LVGL.Common
+        MikroSDK.GraphicLibrary
+)
+
+if(NOT DEFINED IS_PD_SETUP)
+    set(IS_PD_SETUP 0)
+else()
+    if(${IS_PD_SETUP})
+        set(IS_PD_SETUP 1)
+    else()
+        set(IS_PD_SETUP 0)
+    endif()
+endif()
+
+target_compile_definitions(demo_lvgl_widgets PUBLIC
+    ${tim_list}
+    IS_PD_SETUP=${IS_PD_SETUP}
+    TFT_WIDTH=${_MSDK_TFT_WIDTH_}
+)
+
+target_include_directories(demo_lvgl_widgets
+    PUBLIC
+        .
+        driver
+        widgets
+        1ms_timer
+)
+
+if((${MCU_FLASH} LESS 1000000) OR (${MCU_RAM} LESS 80000)) ## 1M Flash / 80KB RAM recommended.
+    message(FATAL_ERROR ": ${MCU_NAME} does not have recommended memory for this example.")
+endif()
+
+if(COMPILER_REVISION)
+    if(${COMPILER_REVISION} VERSION_GREATER_EQUAL "1.0")
+        if(${TOOLCHAIN_LANGUAGE} STREQUAL "GNU")
+            if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/.meproject)
+                fetch_startup_name(${CMAKE_CURRENT_SOURCE_DIR}/.meproject startupName)
+                if(startupName)
+                    add_startup_all_targets(. ${CMAKE_CURRENT_SOURCE_DIR} ${startupName})
+                endif()
+                fetch_linker_name(${CMAKE_CURRENT_SOURCE_DIR}/.meproject linkerName)
+                if(linkerName)
+                    add_ld_all_targets(. ${CMAKE_CURRENT_SOURCE_DIR} ${linkerName})
+                endif()
+            endif()
+        endif()
+    endif()
+endif()

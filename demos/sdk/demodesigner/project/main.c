@@ -178,7 +178,7 @@ void application_task()
 /**
  * @brief Application main function.
  */
-void main()
+int main()
 {
     /* Do not remove this line or clock might not be set correctly. */
     #ifdef PREINIT_SUPPORTED
@@ -191,4 +191,6 @@ void main()
     {
         application_task();
     }
+
+    return 0;
 }

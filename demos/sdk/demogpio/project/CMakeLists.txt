@@ -7,13 +7,13 @@ else()
 endif()
 
 ## Port
-add_subdirectory(demoport)
+add_subdirectory(port)
 
 ## LED curtain
-add_subdirectory(demoledcurtain)
+add_subdirectory(ledcurtain)
 
 ## LED blinking
-add_subdirectory(demoledblinking)
+add_subdirectory(ledblinking)
 
 ## Read input on one pin, display output on another pin
-add_subdirectory(demodigitalinputoutput)
+add_subdirectory(digitalinputoutput)

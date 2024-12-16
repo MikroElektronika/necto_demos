@@ -48,7 +48,7 @@ Current demos:
   + *DISPLAY*
     + [LCD](./demos/sdk/demolcd/project/README.md)
     + [DESIGNER](./demos/sdk/demodesigner/project/README.md)
-    + [LVGL-TODO](TODO)
+    + [LVGL-TODO](./demos/sdk/demolvgl/project/README.md)
 
 ---
 

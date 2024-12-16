@@ -1,0 +1,16 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "LVGL Tool Demo"
+            }
+        ]
+    },
+    "display_name": "LVGL Tool Demo",
+    "name": "mikroe.demo.sdk.lvgl",
+    "type": "project",
+    "version": "3.0.0",
+    "demo": true,
+    "link_github": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/sdk/demolvgl/project"
+}

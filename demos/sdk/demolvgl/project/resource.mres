@@ -1,0 +1,25 @@
+[
+    {
+        "name": "main_screen",
+        "resources": [
+            {
+                "alias": "mikroe_logo_png_252x85",
+                "height": 85,
+                "originalPath": "/home/software/Downloads/mikroe_logo.png",
+                "path": "mikroe_logo.png",
+                "quality": 50,
+                "type": "image",
+                "width": 252
+            },
+            {
+                "alias": "lvglgui_logo_jpeg_80x74",
+                "height": 74,
+                "originalPath": "/home/software/Downloads/lvglgui_logo.jpeg",
+                "path": "lvglgui_logo.jpeg",
+                "quality": 50,
+                "type": "image",
+                "width": 80
+            }
+        ]
+    }
+]
