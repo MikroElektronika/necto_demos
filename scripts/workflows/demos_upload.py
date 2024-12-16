@@ -95,7 +95,7 @@ async def main(gh_instance, demos, args, upload_api):
 
         if package:
             async with aiohttp.ClientSession() as session:
-                await gh_instance.asset_upload(session, package, args.gh_tag)
+                await gh_instance.asset_upload(session, package)
 
 if __name__ == "__main__":
     # First, check for arguments passed

@@ -47,6 +47,7 @@ class repo():
     def __init__(self, repo, token, release_id='latest'):
         self.repo = repo
         self.token = token
+        self.tag = release_id
         self.headers = {
             'fetch': {
                 'Authorization': f'token {token}'
@@ -78,11 +79,14 @@ class repo():
             return asset['browser_download_url']
         return None
 
-    async def asset_upload(self, session, asset_path, tag_name):
+    async def asset_upload(self, session, asset_path):
         """ Upload a release asset to GitHub """
         print(f"Preparing to upload asset: {os.path.basename(asset_path)}...")
 
-        release_url = f"https://api.github.com/repos/{self.repo}/releases/tags/{tag_name}"
+        if 'latest' == self.tag:
+            release_url = f"https://api.github.com/repos/{self.repo}/releases/{self.tag}"
+        else:
+            release_url = f"https://api.github.com/repos/{self.repo}/releases/tags/{self.tag}"
         async with session.get(release_url, headers=self.headers['upload']) as response:
             response_data = await response.json()
             release_id = response_data['id']
