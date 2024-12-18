@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.21)
+    cmake_minimum_required(VERSION 3.21)
 if (${TOOLCHAIN_LANGUAGE} MATCHES "MikroC")
     project(Designer_Tool_Demo LANGUAGES MikroC)
 else()
@@ -20,6 +20,8 @@ add_executable(Designer_Tool_Demo
 )
 
 designer_generator(Designer_Tool_Demo resource.mres main_screen.mscr second_screen.mscr)
+############################ Designer_Tool_Demo GENERATED CODE START ###########################
+############################ Designer_Tool_Demo GENERATED CODE END ###########################
 
 find_package(MikroC.Core REQUIRED)
 find_package_me(MikroSDK.TouchController REQUIRED)
@@ -27,8 +29,8 @@ find_package_me(MikroSDK.GraphicLibrary REQUIRED)
 find_package_me(MikroSDK.VisualTft REQUIRED)
 
 if(${MCU_NAME} MATCHES "STM32|TM4|MK|PIC32")
-    ## 256K Flash and 16K RAM minimum for this demo.
-    has_enough_memory(ENOUGH_MEMORY RAM 16384 FLASH 262144)
+## 256K Flash and 16K RAM minimum for this demo.
+has_enough_memory(ENOUGH_MEMORY RAM 16384 FLASH 262144)
     if(NOT ${ENOUGH_MEMORY})
         message(FATAL_ERROR "${MCU_NAME} does not have enough memory for Designer demo.")
     endif()
@@ -39,7 +41,11 @@ endif()
 if(NOT DEFINED IS_PD_SETUP)
     set(IS_PD_SETUP 0)
 else()
-    set(IS_PD_SETUP ${IS_PD_SETUP})
+    if(${IS_PD_SETUP})
+        set(IS_PD_SETUP 1)
+    else()
+        set(IS_PD_SETUP 0)
+    endif()
 endif()
 
 target_compile_definitions(Designer_Tool_Demo PUBLIC

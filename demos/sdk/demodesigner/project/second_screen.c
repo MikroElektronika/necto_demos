@@ -85,6 +85,10 @@ void increase_trigger()
 // Function call of DECREASE! button press event.
 void decrease_trigger()
 {
-	progress_bar_count -= 1;
-    vtft_set_progress_bar_position(_vtft, second_screen.ProgressBar_0, progress_bar_count);
+    if (progress_bar_count != 0) {
+        progress_bar_count -= 1;
+        vtft_set_progress_bar_position(_vtft, second_screen.ProgressBar_0, progress_bar_count);
+    }
+    if (progress_bar_count == 9)
+		vtft_refresh_current_screen(_vtft);
 }

@@ -4,31 +4,6 @@
             "Components": [
                 {
                     "Events": {
-                        "OnClick": null,
-                        "OnDown": null,
-                        "OnPress": null,
-                        "OnUp": null
-                    },
-                    "Properties": {
-                        "ClassType": "Image",
-                        "Component": {
-                            "Active": true,
-                            "Image": "mikroe266x72",
-                            "Name": "Image_0",
-                            "StackOrder": 1,
-                            "Static": true,
-                            "Visible": true
-                        },
-                        "Geometry": {
-                            "Height": 72,
-                            "Left": 101,
-                            "Top": 57,
-                            "Width": 266
-                        }
-                    }
-                },
-                {
-                    "Events": {
                     },
                     "Properties": {
                         "ClassType": "Label",
@@ -41,8 +16,8 @@
                         },
                         "Geometry": {
                             "Height": 27,
-                            "Left": 92,
-                            "Top": 10,
+                            "Left": 93,
+                            "Top": 11,
                             "Width": 183
                         },
                         "Text": {
@@ -83,26 +58,55 @@
                 },
                 {
                     "Events": {
-                        "OnClick": null,
-                        "OnDown": null,
-                        "OnPress": null,
-                        "OnUp": null
                     },
                     "Properties": {
-                        "ClassType": "Image",
+                        "ClassType": "Label",
                         "Component": {
                             "Active": true,
-                            "Image": "necto_studio_logo282x58",
-                            "Name": "Image_1",
+                            "Name": "Label_2",
                             "StackOrder": 4,
-                            "Static": true,
+                            "Static": false,
                             "Visible": true
                         },
                         "Geometry": {
-                            "Height": 58,
-                            "Left": 97,
-                            "Top": 187,
-                            "Width": 282
+                            "Height": 27,
+                            "Left": 183,
+                            "Top": 48,
+                            "Width": 56
+                        },
+                        "Text": {
+                            "Caption": "MikroE",
+                            "Color": "#ffcf3e",
+                            "Font": "Segoe_UI_Bold_36_159_",
+                            "MaxLength": 0,
+                            "VerticalText": false
+                        }
+                    }
+                },
+                {
+                    "Events": {
+                    },
+                    "Properties": {
+                        "ClassType": "Label",
+                        "Component": {
+                            "Active": true,
+                            "Name": "Label_3",
+                            "StackOrder": 5,
+                            "Static": false,
+                            "Visible": true
+                        },
+                        "Geometry": {
+                            "Height": 27,
+                            "Left": 109,
+                            "Top": 178,
+                            "Width": 136
+                        },
+                        "Text": {
+                            "Caption": "NECTOStudio IDE",
+                            "Color": "#ffcf3e",
+                            "Font": "Segoe_UI_Bold_36_159_",
+                            "MaxLength": 0,
+                            "VerticalText": false
                         }
                     }
                 }
