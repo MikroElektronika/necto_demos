@@ -1,0 +1,16 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "LVGL Keyboard Demo"
+            }
+        ]
+    },
+    "display_name": "LVGL Keyboard Demo",
+    "name": "mikroe.demo.sdk.lvgl.keyboard",
+    "type": "project",
+    "version": "3.0.0",
+    "demo": true,
+    "link_github": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/sdk/demolvglkeyboard/project"
+}

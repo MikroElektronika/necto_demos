@@ -1,0 +1,61 @@
+[
+    {
+        "name": "main_screen",
+        "resources": [
+            {
+                "alias": "mikroe_logo_whiteback_png_413x96",
+                "height": 96,
+                "originalPath": "C:/Users/ivan.ruzavin/Downloads/mikroe.logo.whiteback.png",
+                "path": "mikroe.logo.whiteback.png",
+                "quality": 50,
+                "type": "image",
+                "width": 413
+            },
+            {
+                "alias": "Ubuntu_Regular_s24_r32_127",
+                "dpi": 72,
+                "endChar": 127,
+                "family": "Ubuntu",
+                "path": "Ubuntu-Regular.ttf",
+                "pointSize": 24,
+                "startChar": 32,
+                "strikeOut": false,
+                "styleName": "Regular",
+                "type": "font",
+                "underline": false
+            },
+            {
+                "alias": "Ubuntu_Regular_s22_r32_127",
+                "dpi": 72,
+                "endChar": 127,
+                "family": "Ubuntu",
+                "originalPath": "C:/Users/ivan.ruzavin/AppData/Local/MIKROE/NECTOStudio7Live/resources/fonts/Ubuntu-Regular.ttf",
+                "path": "Ubuntu-Regular.ttf",
+                "pointSize": 22,
+                "startChar": 32,
+                "strikeOut": false,
+                "styleName": "Regular",
+                "type": "font",
+                "underline": false
+            }
+        ]
+    },
+    {
+        "name": "second_screen",
+        "resources": [
+            {
+                "alias": "Ubuntu_Regular_s24_r32_127",
+                "dpi": 72,
+                "endChar": 127,
+                "family": "Ubuntu",
+                "path": "Ubuntu-Regular.ttf",
+                "pointSize": 24,
+                "startChar": 32,
+                "strikeOut": false,
+                "styleName": "Regular",
+                "type": "font",
+                "underline": false
+            }
+        ]
+    }
+]

@@ -1,0 +1,197 @@
+{
+    "children": [
+        {
+            "events": {
+                "LV_EVENT_CLICKED": null,
+                "LV_EVENT_DEFOCUSED": null,
+                "LV_EVENT_DELETE": null,
+                "LV_EVENT_FOCUSED": null,
+                "LV_EVENT_PRESSED": null,
+                "LV_EVENT_PRESSING": null,
+                "LV_EVENT_RELEASED": null,
+                "LV_EVENT_SCROLL": null,
+                "LV_EVENT_SCROLL_BEGIN": null,
+                "LV_EVENT_SCROLL_END": null,
+                "LV_EVENT_SIZE_CHANGED": null,
+                "LV_EVENT_STYLE_CHANGED": null
+            },
+            "geometry": {
+                "height": 96,
+                "width": 413,
+                "x": 34,
+                "y": 19
+            },
+            "image": {
+                "height": 60,
+                "image_alias": "mikroe_logo_whiteback_png_413x96",
+                "stretched": true,
+                "width": 60
+            },
+            "name": "img_0",
+            "stack_order": 0,
+            "styles": [
+                {
+                    "background": {
+                        "bg_color": "#ffffff",
+                        "bg_grad_color": "#000000",
+                        "bg_grad_dir": "LV_GRAD_DIR_NONE",
+                        "bg_opa": 0
+                    },
+                    "border": {
+                        "border_color": "#000000",
+                        "border_opa": 100,
+                        "border_post": false,
+                        "border_width": 0,
+                        "radius": 0
+                    },
+                    "part": "LV_PART_MAIN",
+                    "shadow": {
+                        "shadow_color": "#000000",
+                        "shadow_ofs_x": 0,
+                        "shadow_ofs_y": 0,
+                        "shadow_opa": 100,
+                        "shadow_spread": 0,
+                        "shadow_width": 0
+                    },
+                    "state": "LV_STATE_DEFAULT"
+                }
+            ],
+            "type": "img"
+        },
+        {
+            "events": {
+                "LV_EVENT_CLICKED": "button_clicked",
+                "LV_EVENT_DEFOCUSED": null,
+                "LV_EVENT_DELETE": null,
+                "LV_EVENT_FOCUSED": null,
+                "LV_EVENT_PRESSED": null,
+                "LV_EVENT_PRESSING": null,
+                "LV_EVENT_RELEASED": null,
+                "LV_EVENT_SCROLL": null,
+                "LV_EVENT_SCROLL_BEGIN": null,
+                "LV_EVENT_SCROLL_END": null,
+                "LV_EVENT_SIZE_CHANGED": null,
+                "LV_EVENT_STYLE_CHANGED": null,
+                "LV_EVENT_VALUE_CHANGED": null
+            },
+            "geometry": {
+                "height": 50,
+                "width": 305,
+                "x": 91,
+                "y": 205
+            },
+            "name": "btn_0",
+            "stack_order": 0,
+            "styles": [
+                {
+                    "background": {
+                        "bg_color": "#ffb702",
+                        "bg_grad_color": "#000000",
+                        "bg_grad_dir": "LV_GRAD_DIR_NONE",
+                        "bg_opa": 100
+                    },
+                    "border": {
+                        "border_color": "#000000",
+                        "border_opa": 100,
+                        "border_post": false,
+                        "border_width": 0,
+                        "radius": 10
+                    },
+                    "part": "LV_PART_MAIN",
+                    "shadow": {
+                        "shadow_color": "#9e9e9e",
+                        "shadow_ofs_x": 0,
+                        "shadow_ofs_y": 2,
+                        "shadow_opa": 100,
+                        "shadow_spread": 0,
+                        "shadow_width": 2
+                    },
+                    "state": "LV_STATE_DEFAULT",
+                    "text_settings": {
+                        "text_color": "#000000",
+                        "text_font": "Ubuntu_Regular_s24_r32_127",
+                        "text_letter_space": 0,
+                        "text_line_space": 0,
+                        "text_opa": 100
+                    }
+                }
+            ],
+            "text": "Show Keyboard",
+            "type": "btn"
+        },
+        {
+            "events": {
+                "LV_EVENT_CLICKED": null,
+                "LV_EVENT_DEFOCUSED": null,
+                "LV_EVENT_DELETE": null,
+                "LV_EVENT_FOCUSED": null,
+                "LV_EVENT_PRESSED": null,
+                "LV_EVENT_PRESSING": null,
+                "LV_EVENT_RELEASED": null,
+                "LV_EVENT_SCROLL": null,
+                "LV_EVENT_SCROLL_BEGIN": null,
+                "LV_EVENT_SCROLL_END": null,
+                "LV_EVENT_SIZE_CHANGED": null,
+                "LV_EVENT_STYLE_CHANGED": null
+            },
+            "geometry": {
+                "height": 61,
+                "width": 461,
+                "x": 12,
+                "y": 135
+            },
+            "long_mode": "LV_LABEL_LONG_WRAP",
+            "name": "label_0",
+            "stack_order": 0,
+            "styles": [
+                {
+                    "background": {
+                        "bg_color": "#ffffff",
+                        "bg_grad_color": "#000000",
+                        "bg_grad_dir": "LV_GRAD_DIR_NONE",
+                        "bg_opa": 0
+                    },
+                    "border": {
+                        "border_color": "#000000",
+                        "border_opa": 100,
+                        "border_post": false,
+                        "border_width": 0,
+                        "radius": 0
+                    },
+                    "part": "LV_PART_MAIN",
+                    "shadow": {
+                        "shadow_color": "#000000",
+                        "shadow_ofs_x": 0,
+                        "shadow_ofs_y": 0,
+                        "shadow_opa": 100,
+                        "shadow_spread": 0,
+                        "shadow_width": 0
+                    },
+                    "state": "LV_STATE_DEFAULT",
+                    "text_settings": {
+                        "text_color": "#212121",
+                        "text_font": "Ubuntu_Regular_s22_r32_127",
+                        "text_letter_space": 0,
+                        "text_line_space": 0,
+                        "text_opa": 100
+                    }
+                }
+            ],
+            "text": "This Demo displays the Keyboard Widget features of LVGL library. Click button to start.",
+            "type": "label"
+        }
+    ],
+    "name": "main_screen",
+    "styles": [
+        {
+            "background": {
+                "bg_color": "#eeeeee",
+                "bg_grad_color": "#eeeeee",
+                "bg_grad_dir": "LV_GRAD_DIR_NONE"
+            },
+            "part": "LV_PART_MAIN",
+            "state": "LV_STATE_DEFAULT"
+        }
+    ],
+    "type": "obj"
+}
