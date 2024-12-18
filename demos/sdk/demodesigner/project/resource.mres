@@ -30,22 +30,6 @@
         "weight": 50
     },
     {
-        "alias": "mikroe266x72",
-        "original_path": "C:/Users/ivan.ruzavin/Downloads/mikroe.logo.darkback.png",
-        "path": "C:/Users/ivan.ruzavin/Documents/MIKROE/Projects/Designer_Demo/resources/mikroe266x72.png",
-        "pointSize": -2147483648,
-        "quality": 50,
-        "type": "image"
-    },
-    {
-        "alias": "necto_studio_logo282x58",
-        "original_path": "C:/Users/ivan.ruzavin/Downloads/necto-studio-logo.png",
-        "path": "C:/Users/ivan.ruzavin/Documents/MIKROE/Projects/Designer_Demo/resources/necto_studio_logo282x58.png",
-        "pointSize": -2147483648,
-        "quality": 50,
-        "type": "image"
-    },
-    {
         "alias": "Sans_Serif_16_159",
         "dpi": 72,
         "endChar": 127,
@@ -74,5 +58,20 @@
         "type": "font",
         "underline": false,
         "weight": 50
+    },
+    {
+        "alias": "Segoe_UI_Bold_36_159_",
+        "dpi": 72,
+        "endChar": 127,
+        "family": "Segoe UI",
+        "id": 1,
+        "italic": false,
+        "pointSize": 36,
+        "startChar": 32,
+        "strikeOut": false,
+        "styleName": "Bold",
+        "type": "font",
+        "underline": false,
+        "weight": 75
     }
 ]

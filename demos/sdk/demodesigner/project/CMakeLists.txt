@@ -39,7 +39,11 @@ endif()
 if(NOT DEFINED IS_PD_SETUP)
     set(IS_PD_SETUP 0)
 else()
-    set(IS_PD_SETUP ${IS_PD_SETUP})
+    if(${IS_PD_SETUP})
+        set(IS_PD_SETUP 1)
+    else()
+        set(IS_PD_SETUP 0)
+    endif()
 endif()
 
 target_compile_definitions(Designer_Tool_Demo PUBLIC
