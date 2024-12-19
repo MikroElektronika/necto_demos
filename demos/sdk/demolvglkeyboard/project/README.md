@@ -1,4 +1,4 @@
-# LVGL Widget DEMO
+# LVGL Keyboard DEMO
 
 This Demo shows how to use Keyboard component of LVGL Tool in NECTOStudio IDE. First it displays the intro screen and then it shows application screen.
 
