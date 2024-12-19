@@ -18,8 +18,8 @@
             "geometry": {
                 "height": 96,
                 "width": 413,
-                "x": 34,
-                "y": 19
+                "x": 178,
+                "y": 94
             },
             "image": {
                 "height": 60,
@@ -77,8 +77,8 @@
             "geometry": {
                 "height": 50,
                 "width": 305,
-                "x": 91,
-                "y": 205
+                "x": 244,
+                "y": 358
             },
             "name": "btn_0",
             "stack_order": 0,
@@ -137,8 +137,8 @@
             "geometry": {
                 "height": 61,
                 "width": 461,
-                "x": 12,
-                "y": 135
+                "x": 167,
+                "y": 235
             },
             "long_mode": "LV_LABEL_LONG_WRAP",
             "name": "label_0",
