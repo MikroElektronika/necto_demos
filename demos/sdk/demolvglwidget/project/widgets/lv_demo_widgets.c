@@ -201,7 +201,7 @@ static void analytics_create(lv_obj_t * parent)
     lv_obj_set_style_max_height(chart1_cont, 300, 0);
 
     lv_obj_t * title = lv_label_create(chart1_cont);
-    lv_label_set_text(title, "NECTO - Unique User Count");
+    lv_label_set_text(title, "PD - New Setups in NECTO");
     lv_obj_add_style(title, &style_title, 0);
     lv_obj_set_grid_cell(title, LV_GRID_ALIGN_START, 0, 2, LV_GRID_ALIGN_START, 0, 1);
 
@@ -221,19 +221,19 @@ static void analytics_create(lv_obj_t * parent)
     lv_obj_set_style_radius(chart1, 0, 0);
 
     ser1 = lv_chart_add_series(chart1, lv_theme_get_color_primary(chart1), LV_CHART_AXIS_PRIMARY_Y);
-    lv_chart_set_next_value(chart1, ser1, lv_rand(10, 80));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(10, 80));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(10, 80));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(10, 80));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(10, 80));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(10, 80));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(10, 80));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(10, 80));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(10, 80));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(10, 80));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(10, 80));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(10, 80));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(10, 80));
+    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
+    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
+    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
+    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
+    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
+    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
+    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
+    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
+    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
+    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
+    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
+    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
+    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
 
     chart2_cont = lv_obj_create(parent);
     lv_obj_add_flag(chart2_cont, LV_OBJ_FLAG_FLEX_IN_NEW_TRACK);
@@ -245,7 +245,7 @@ static void analytics_create(lv_obj_t * parent)
     lv_obj_set_grid_dsc_array(chart2_cont, grid_chart_col_dsc, grid_chart_row_dsc);
 
     title = lv_label_create(chart2_cont);
-    lv_label_set_text(title, "NECTO - New Monthly Users");
+    lv_label_set_text(title, "NECTO - New Daily Users");
     lv_obj_add_style(title, &style_title, 0);
     lv_obj_set_grid_cell(title, LV_GRID_ALIGN_START, 0, 2, LV_GRID_ALIGN_START, 0, 1);
 
@@ -274,34 +274,34 @@ static void analytics_create(lv_obj_t * parent)
     }
 
     ser2 = lv_chart_add_series(chart2, lv_palette_lighten(LV_PALETTE_GREY, 1), LV_CHART_AXIS_PRIMARY_Y);
-    lv_chart_set_next_value(chart2, ser2, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(10, 80));
+    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
+    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
+    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
+    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
+    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
+    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
+    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
+    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
+    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
+    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
+    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
+    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
+    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
 
     ser3 = lv_chart_add_series(chart2, lv_theme_get_color_primary(chart1), LV_CHART_AXIS_PRIMARY_Y);
-    lv_chart_set_next_value(chart2, ser3, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(10, 80));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(10, 80));
+    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
+    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
+    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
+    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
+    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
+    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
+    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
+    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
+    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
+    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
+    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
+    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
+    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
 
     lv_meter_scale_t * scale;
     lv_meter_indicator_t * indic;
