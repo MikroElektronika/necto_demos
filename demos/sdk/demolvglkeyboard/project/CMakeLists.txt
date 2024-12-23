@@ -54,28 +54,10 @@ else()
     endif()
 endif()
 
-## TODO - temporary fix - remove later
-has_enough_memory(ENOUGH_MEMORY RAM 131072 FLASH 524288)
-if(${ENOUGH_MEMORY})
-    target_compile_definitions(demo_lvgl_keyboard PUBLIC
-        ${tim_list}
-        IS_PD_SETUP=${IS_PD_SETUP}
-        TFT_WIDTH=${_MSDK_TFT_WIDTH_}
-        undef LV_LVGL_H_INCLUDE_SIMPLE
-    )
-else()
-    target_compile_definitions(demo_lvgl_keyboard PUBLIC
-        ${tim_list}
-        IS_PD_SETUP=${IS_PD_SETUP}
-        TFT_WIDTH=${_MSDK_TFT_WIDTH_}
-    )
-endif()
-
 target_compile_definitions(demo_lvgl_keyboard PUBLIC
     ${tim_list}
     IS_PD_SETUP=${IS_PD_SETUP}
     TFT_WIDTH=${_MSDK_TFT_WIDTH_}
-    ${UNDEF_FIX}
 )
 
 target_include_directories(demo_lvgl_keyboard
