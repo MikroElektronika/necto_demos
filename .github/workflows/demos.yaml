@@ -15,13 +15,6 @@ on:
         type: boolean
         description: Select to upload all demos in repository
         default: false
-      index:
-        type: choice
-        description: If releasing for Legacy, choose where to index to
-        options:
-          - Test
-          - Live
-          - Both
 
 jobs:
   Upload:
