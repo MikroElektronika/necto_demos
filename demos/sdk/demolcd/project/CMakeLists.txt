@@ -11,47 +11,6 @@ add_executable(lcd_demo
     main.c
 )
 
-if (${MCU_NAME} MATCHES "^STM32.+")
-    target_compile_definitions(lcd_demo PUBLIC
-        DELAY_LCD=400
-    )
-endif()
-if (${MCU_NAME} MATCHES "^MK.+")
-    target_compile_definitions(lcd_demo PUBLIC
-        DELAY_LCD=100
-    )
-endif()
-if (${MCU_NAME} MATCHES "^TM4.+")
-    target_compile_definitions(lcd_demo PUBLIC
-        DELAY_LCD=200
-    )
-endif()
-if (${MCU_NAME} MATCHES "^PIC32.+")
-    target_compile_definitions(lcd_demo PUBLIC
-        DELAY_LCD=200
-    )
-endif()
-if (${MCU_NAME} MATCHES "^PIC18.+")
-    target_compile_definitions(lcd_demo PUBLIC
-        DELAY_LCD=250
-    )
-endif()
-if (${CORE_NAME} MATCHES "DSPIC")
-    target_compile_definitions(lcd_demo PUBLIC
-        DELAY_LCD=400
-    )
-endif()
-if (${CORE_NAME} MATCHES "RISCV")
-    target_compile_definitions(lcd_demo PUBLIC
-        DELAY_LCD=100
-    )
-endif()
-if ((${CORE_NAME} MATCHES "GT64K") OR (${CORE_NAME} MATCHES "LTE64K"))
-    target_compile_definitions(lcd_demo PUBLIC
-        DELAY_LCD=200
-    )
-endif()
-
 find_package(MikroC.Core REQUIRED)
 find_package(MikroSDK.Board REQUIRED)
 find_package(MikroSDK.Driver.GPIO.Out REQUIRED)

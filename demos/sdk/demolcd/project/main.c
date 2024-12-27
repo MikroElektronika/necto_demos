@@ -46,7 +46,7 @@
 
 /**
  * @brief For a detailed explanation of this demo, please visit:
- * <https://libstock.mikroe.com/projects/view/5636/lcd-demo>
+ * <https://github.com/MikroElektronika/necto_demos/blob/main/demos/sdk/demolcd/project/README.md>
  */
 
 // ------------------------------------------------------------------ INCLUDES
@@ -75,7 +75,7 @@
     #error "SDK version must be 2.10.0 or higher."
 #endif
 
-#define LCD_DELAY_MOVE 300
+#define DELAY_LCD 300
 
 // ----------------------------------------------------------------- VARIABLES
 static lcd_config_t lcd_cfg; // LCD config structure.
@@ -149,13 +149,13 @@ int main(void) {
         // Shifting characters left 5 times.
         for(i=0; i<5; i++) {
             lcd_shift_left(lcd);
-            Delay_ms(LCD_DELAY_MOVE);
+            Delay_ms(DELAY_LCD);
         }
 
         // Shifting characters right 5 times.
         for(i=0; i<5; i++) {
             lcd_shift_right(lcd);
-            Delay_ms(LCD_DELAY_MOVE);
+            Delay_ms(DELAY_LCD);
         }
     }
 
