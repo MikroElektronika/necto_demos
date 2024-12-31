@@ -10,7 +10,7 @@
     "display_name": "LVGL Widget Demo",
     "name": "mikroe.demo.sdk.lvgl.widget",
     "type": "project",
-    "version": "3.0.1",
+    "version": "3.1.0",
     "demo": true,
     "link_github": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/sdk/demolvglwidget/project"
 }

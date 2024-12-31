@@ -34,7 +34,6 @@ static void analytics_create(lv_obj_t * parent);
 static lv_obj_t * create_meter_box(lv_obj_t * parent, const char * title, const char * text1, const char * text2,
                                    const char * text3);
 
-static void chart_event_cb(lv_event_t * e);
 static void meter1_indic1_anim_cb(void * var, int32_t v);
 static void meter1_indic2_anim_cb(void * var, int32_t v);
 static void meter1_indic3_anim_cb(void * var, int32_t v);
@@ -52,13 +51,6 @@ static lv_style_t style_title;
 static lv_style_t style_icon;
 static lv_style_t style_bullet;
 
-static lv_obj_t * chart1;
-static lv_obj_t * chart2;
-
-static lv_chart_series_t * ser1;
-static lv_chart_series_t * ser2;
-static lv_chart_series_t * ser3;
-
 static const lv_font_t * font_large;
 static const lv_font_t * font_normal;
 
@@ -74,9 +66,6 @@ lv_obj_t * t1;
 lv_obj_t * meter1;
 lv_obj_t * meter2;
 lv_obj_t * meter3;
-
-lv_obj_t * chart1_cont;
-lv_obj_t * chart2_cont;
 
 /**********************
  *      MACROS
@@ -189,119 +178,6 @@ void lv_demo_widgets(void)
 static void analytics_create(lv_obj_t * parent)
 {
     lv_obj_set_flex_flow(parent, LV_FLEX_FLOW_ROW_WRAP);
-
-    static lv_coord_t grid_chart_row_dsc[] = {LV_GRID_CONTENT, LV_GRID_FR(1), 10, LV_GRID_TEMPLATE_LAST};
-    static lv_coord_t grid_chart_col_dsc[] = {20, LV_GRID_FR(1), LV_GRID_TEMPLATE_LAST};
-
-    chart1_cont = lv_obj_create(parent);
-    lv_obj_set_flex_grow(chart1_cont, 1);
-    lv_obj_set_grid_dsc_array(chart1_cont, grid_chart_col_dsc, grid_chart_row_dsc);
-
-    lv_obj_set_height(chart1_cont, LV_PCT(100));
-    lv_obj_set_style_max_height(chart1_cont, 300, 0);
-
-    lv_obj_t * title = lv_label_create(chart1_cont);
-    lv_label_set_text(title, "PD - New Setups in NECTO");
-    lv_obj_add_style(title, &style_title, 0);
-    lv_obj_set_grid_cell(title, LV_GRID_ALIGN_START, 0, 2, LV_GRID_ALIGN_START, 0, 1);
-
-    chart1 = lv_chart_create(chart1_cont);
-    lv_group_add_obj(lv_group_get_default(), chart1);
-    lv_obj_add_flag(chart1, LV_OBJ_FLAG_SCROLL_ON_FOCUS);
-    lv_obj_set_grid_cell(chart1, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_STRETCH, 1, 1);
-    lv_chart_set_axis_tick(chart1, LV_CHART_AXIS_PRIMARY_Y, 0, 0, 5, 1, true, 80);
-    lv_chart_set_axis_tick(chart1, LV_CHART_AXIS_PRIMARY_X, 0, 0, 12, 1, true, 50);
-    lv_chart_set_div_line_count(chart1, 0, 12);
-    lv_chart_set_point_count(chart1, 12);
-    lv_obj_add_event_cb(chart1, chart_event_cb, LV_EVENT_ALL, NULL);
-    if(disp_size == DISP_SMALL) lv_chart_set_zoom_x(chart1, 256 * 3);
-    else if(disp_size == DISP_MEDIUM) lv_chart_set_zoom_x(chart1, 256 * 2);
-
-    lv_obj_set_style_border_side(chart1, LV_BORDER_SIDE_LEFT | LV_BORDER_SIDE_BOTTOM, 0);
-    lv_obj_set_style_radius(chart1, 0, 0);
-
-    ser1 = lv_chart_add_series(chart1, lv_theme_get_color_primary(chart1), LV_CHART_AXIS_PRIMARY_Y);
-    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
-    lv_chart_set_next_value(chart1, ser1, lv_rand(40, 99));
-
-    chart2_cont = lv_obj_create(parent);
-    lv_obj_add_flag(chart2_cont, LV_OBJ_FLAG_FLEX_IN_NEW_TRACK);
-    lv_obj_set_flex_grow(chart2_cont, 1);
-
-    lv_obj_set_height(chart2_cont, LV_PCT(100));
-    lv_obj_set_style_max_height(chart2_cont, 300, 0);
-
-    lv_obj_set_grid_dsc_array(chart2_cont, grid_chart_col_dsc, grid_chart_row_dsc);
-
-    title = lv_label_create(chart2_cont);
-    lv_label_set_text(title, "NECTO - New Daily Users");
-    lv_obj_add_style(title, &style_title, 0);
-    lv_obj_set_grid_cell(title, LV_GRID_ALIGN_START, 0, 2, LV_GRID_ALIGN_START, 0, 1);
-
-    chart2 = lv_chart_create(chart2_cont);
-    lv_group_add_obj(lv_group_get_default(), chart2);
-    lv_obj_add_flag(chart2, LV_OBJ_FLAG_SCROLL_ON_FOCUS);
-
-    lv_obj_set_grid_cell(chart2, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_STRETCH, 1, 1);
-    lv_chart_set_axis_tick(chart2, LV_CHART_AXIS_PRIMARY_Y, 0, 0, 5, 1, true, 80);
-    lv_chart_set_axis_tick(chart2, LV_CHART_AXIS_PRIMARY_X, 0, 0, 12, 1, true, 50);
-    lv_obj_set_size(chart2, LV_PCT(100), LV_PCT(100));
-    lv_chart_set_type(chart2, LV_CHART_TYPE_BAR);
-    lv_chart_set_div_line_count(chart2, 6, 0);
-    lv_chart_set_point_count(chart2, 12);
-    lv_obj_add_event_cb(chart2, chart_event_cb, LV_EVENT_ALL, NULL);
-    lv_chart_set_zoom_x(chart2, 256 * 2);
-    lv_obj_set_style_border_side(chart2, LV_BORDER_SIDE_LEFT | LV_BORDER_SIDE_BOTTOM, 0);
-    lv_obj_set_style_radius(chart2, 0, 0);
-
-    if(disp_size == DISP_SMALL) {
-        lv_obj_set_style_pad_gap(chart2, 0, LV_PART_ITEMS);
-        lv_obj_set_style_pad_gap(chart2, 2, LV_PART_MAIN);
-    }
-    else if(disp_size == DISP_LARGE) {
-        lv_obj_set_style_pad_gap(chart2, 16, 0);
-    }
-
-    ser2 = lv_chart_add_series(chart2, lv_palette_lighten(LV_PALETTE_GREY, 1), LV_CHART_AXIS_PRIMARY_Y);
-    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
-    lv_chart_set_next_value(chart2, ser2, lv_rand(50, 99));
-
-    ser3 = lv_chart_add_series(chart2, lv_theme_get_color_primary(chart1), LV_CHART_AXIS_PRIMARY_Y);
-    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
-    lv_chart_set_next_value(chart2, ser3, lv_rand(60, 99));
 
     lv_meter_scale_t * scale;
     lv_meter_indicator_t * indic;
@@ -515,134 +391,6 @@ static lv_obj_t * create_meter_box(lv_obj_t * parent, const char * title, const 
 
     return meter;
 
-}
-
-static void chart_event_cb(lv_event_t * e)
-{
-    lv_event_code_t _code = lv_event_get_code(e);
-    lv_obj_t * obj = lv_event_get_target(e);
-
-    if(_code == LV_EVENT_PRESSED || _code == LV_EVENT_RELEASED) {
-        lv_obj_invalidate(obj); /*To make the value boxes visible*/
-    }
-    else if(_code == LV_EVENT_DRAW_PART_BEGIN) {
-        lv_obj_draw_part_dsc_t * dsc = lv_event_get_param(e);
-        /*Set the markers' text*/
-        if(dsc->part == LV_PART_TICKS && dsc->id == LV_CHART_AXIS_PRIMARY_X) {
-            if(lv_chart_get_type(obj) == LV_CHART_TYPE_BAR) {
-                const char * month[] = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"};
-                lv_snprintf(dsc->text, dsc->text_length, "%s", month[dsc->value]);
-            }
-            else {
-                const char * month[] = {"Jan", "Febr", "March", "Apr", "May", "Jun", "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
-                lv_snprintf(dsc->text, dsc->text_length, "%s", month[dsc->value]);
-            }
-        }
-
-        /*Add the faded area before the lines are drawn */
-        else if(dsc->part == LV_PART_ITEMS) {
-#if LV_DRAW_COMPLEX
-            /*Add  a line mask that keeps the area below the line*/
-            if(dsc->p1 && dsc->p2) {
-                lv_draw_mask_line_param_t line_mask_param;
-                lv_draw_mask_line_points_init(&line_mask_param, dsc->p1->x, dsc->p1->y, dsc->p2->x, dsc->p2->y,
-                                              LV_DRAW_MASK_LINE_SIDE_BOTTOM);
-                int16_t line_mask_id = lv_draw_mask_add(&line_mask_param, NULL);
-
-                /*Add a fade effect: transparent bottom covering top*/
-                lv_coord_t h = lv_obj_get_height(obj);
-                lv_draw_mask_fade_param_t fade_mask_param;
-                lv_draw_mask_fade_init(&fade_mask_param, &obj->coords, LV_OPA_COVER, obj->coords.y1 + h / 8, LV_OPA_TRANSP,
-                                       obj->coords.y2);
-                int16_t fade_mask_id = lv_draw_mask_add(&fade_mask_param, NULL);
-
-                /*Draw a rectangle that will be affected by the mask*/
-                lv_draw_rect_dsc_t draw_rect_dsc;
-                lv_draw_rect_dsc_init(&draw_rect_dsc);
-                draw_rect_dsc.bg_opa = LV_OPA_50;
-                draw_rect_dsc.bg_color = dsc->line_dsc->color;
-
-                lv_area_t obj_clip_area;
-                _lv_area_intersect(&obj_clip_area, dsc->draw_ctx->clip_area, &obj->coords);
-                const lv_area_t * clip_area_ori = dsc->draw_ctx->clip_area;
-                dsc->draw_ctx->clip_area = &obj_clip_area;
-                lv_area_t a;
-                a.x1 = dsc->p1->x;
-                a.x2 = dsc->p2->x - 1;
-                a.y1 = LV_MIN(dsc->p1->y, dsc->p2->y);
-                a.y2 = obj->coords.y2;
-                lv_draw_rect(dsc->draw_ctx, &draw_rect_dsc, &a);
-                dsc->draw_ctx->clip_area = clip_area_ori;
-                /*Remove the masks*/
-                lv_draw_mask_remove_id(line_mask_id);
-                lv_draw_mask_remove_id(fade_mask_id);
-            }
-#endif
-
-
-            const lv_chart_series_t * ser = dsc->sub_part_ptr;
-
-            if(lv_chart_get_pressed_point(obj) == dsc->id) {
-                if(lv_chart_get_type(obj) == LV_CHART_TYPE_LINE) {
-                    dsc->rect_dsc->outline_color = lv_color_white();
-                    dsc->rect_dsc->outline_width = 2;
-                }
-                else {
-                    dsc->rect_dsc->shadow_color = ser->color;
-                    dsc->rect_dsc->shadow_width = 15;
-                    dsc->rect_dsc->shadow_spread = 0;
-                }
-
-                char buf[8];
-                lv_snprintf(buf, sizeof(buf), "%"LV_PRIu32, dsc->value);
-
-                lv_point_t text_size;
-                lv_txt_get_size(&text_size, buf, font_normal, 0, 0, LV_COORD_MAX, LV_TEXT_FLAG_NONE);
-
-                lv_area_t txt_area;
-                if(lv_chart_get_type(obj) == LV_CHART_TYPE_BAR) {
-                    txt_area.y2 = dsc->draw_area->y1 - LV_DPX(15);
-                    txt_area.y1 = txt_area.y2 - text_size.y;
-                    if(ser == lv_chart_get_series_next(obj, NULL)) {
-                        txt_area.x1 = dsc->draw_area->x1 + lv_area_get_width(dsc->draw_area) / 2;
-                        txt_area.x2 = txt_area.x1 + text_size.x;
-                    }
-                    else {
-                        txt_area.x2 = dsc->draw_area->x1 + lv_area_get_width(dsc->draw_area) / 2;
-                        txt_area.x1 = txt_area.x2 - text_size.x;
-                    }
-                }
-                else {
-                    txt_area.x1 = dsc->draw_area->x1 + lv_area_get_width(dsc->draw_area) / 2 - text_size.x / 2;
-                    txt_area.x2 = txt_area.x1 + text_size.x;
-                    txt_area.y2 = dsc->draw_area->y1 - LV_DPX(15);
-                    txt_area.y1 = txt_area.y2 - text_size.y;
-                }
-
-                lv_area_t bg_area;
-                bg_area.x1 = txt_area.x1 - LV_DPX(8);
-                bg_area.x2 = txt_area.x2 + LV_DPX(8);
-                bg_area.y1 = txt_area.y1 - LV_DPX(8);
-                bg_area.y2 = txt_area.y2 + LV_DPX(8);
-
-                lv_draw_rect_dsc_t rect_dsc;
-                lv_draw_rect_dsc_init(&rect_dsc);
-                rect_dsc.bg_color = ser->color;
-                rect_dsc.radius = LV_DPX(5);
-                lv_draw_rect(dsc->draw_ctx, &rect_dsc, &bg_area);
-
-                lv_draw_label_dsc_t label_dsc;
-                lv_draw_label_dsc_init(&label_dsc);
-                label_dsc.color = lv_color_white();
-                label_dsc.font = font_normal;
-                lv_draw_label(dsc->draw_ctx, &label_dsc, &txt_area,  buf, NULL);
-            }
-            else {
-                dsc->rect_dsc->outline_width = 0;
-                dsc->rect_dsc->shadow_width = 0;
-            }
-        }
-    }
 }
 
 static void meter1_indic1_anim_cb(void * var, int32_t v)

@@ -49,7 +49,7 @@ extern "C" {
 #if PD_SETUP
 static volatile bool secondCount = false;
 static uint8_t widget_num = 1;
-static lv_coord_t coordinates[5];
+static lv_coord_t coordinates[3];
 #endif
 
 /**********************
@@ -57,8 +57,6 @@ static lv_coord_t coordinates[5];
  **********************/
 #if PD_SETUP
 extern lv_obj_t * t1;
-extern lv_obj_t * chart1_cont;
-extern lv_obj_t * chart2_cont;
 extern lv_obj_t * meter1;
 extern lv_obj_t * meter2;
 extern lv_obj_t * meter3;
@@ -74,9 +72,9 @@ void lv_demo_widgets(void);
  **********************/
 #if PD_SETUP
 #if TFT_WIDTH==800
-#define WIDGET_COUNT 2
+#define WIDGET_COUNT 1
 #else
-#define WIDGET_COUNT 4
+#define WIDGET_COUNT 3
 #endif
 #define METER1_OFFSET 10
 #define METER2_OFFSET METER1_OFFSET
