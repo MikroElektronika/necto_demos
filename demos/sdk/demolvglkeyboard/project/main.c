@@ -1,6 +1,6 @@
 /**
  * @file main.c
- * @brief Main function for Untitled6 LVGL Designer Application.
+ * @brief Main function for LVGL Keyboard Designer Application.
  */
 
 /**
@@ -41,6 +41,177 @@ void application_init()
 
 extern uint8_t check_flag;
 
+#if IS_PD_SETUP
+// Macro that is used to define Enter Button position
+#define ENTER_CHARACTER_BUTTON 22
+// Macro that is used to define Space Bar Button position
+#define SPACE_CHARACTER_BUTTON 37
+
+// Function to simulate button clicks on the keyboard
+void simulate_button_clicks(lv_obj_t *keyboard, const char *text) {
+    // Map for lower cased keyboard
+    char btn_map_lower[] = " qwertyuiop  asdfghjkl _-zxcvbnm.,:";
+    // Map for upper cased keyboard
+    char btn_map_upper[] = " QWERTYUIOP  ASDFGHJKL _-ZXCVBNM.,:";
+    // Map for number keyboard
+    char btn_map_number[] = "1234567890";
+    // Map for special case keyboard
+    char btn_map_special[] = "1234567890  +-/";
+    // Flag for found character
+    bool char_found;
+
+    for (size_t i = 0; text[i] != '\0'; i++) {
+        char c = text[i];
+        char_found = false;
+
+        // Case if we need to press Space Bar
+        if (c == ' ') {
+            // Set Keyboard Button to be in pressed state
+            lv_btnmatrix_set_btn_ctrl(keyboard, SPACE_CHARACTER_BUTTON, LV_BTNMATRIX_CTRL_CHECKED);
+            // Pass the selected button value to the keyboard object
+            lv_btnmatrix_set_selected_btn(keyboard, SPACE_CHARACTER_BUTTON);
+            // Display the changes
+            lv_task_handler();
+            // Trigger the Keyboard Click event
+            lv_event_send(keyboard, LV_EVENT_CLICKED, (void *)(uintptr_t)SPACE_CHARACTER_BUTTON);
+            // Set Keyboard Button to be in released state
+            lv_btnmatrix_clear_btn_ctrl(keyboard, SPACE_CHARACTER_BUTTON, LV_BTNMATRIX_CTRL_CHECKED);
+            // Display the changes
+            lv_task_handler();
+            continue;
+        }
+
+        // Case if we need to press Enter Button
+        if (c == '\n') {
+            // Set Keyboard Button to be in pressed state
+            lv_btnmatrix_set_btn_ctrl(keyboard, ENTER_CHARACTER_BUTTON, LV_BTNMATRIX_CTRL_CHECKED);
+            // Pass the selected button value to the keyboard object
+            lv_btnmatrix_set_selected_btn(keyboard, ENTER_CHARACTER_BUTTON);
+            // Display the changes
+            lv_task_handler();
+            // Trigger the Keyboard Click event
+            lv_event_send(keyboard, LV_EVENT_CLICKED, (void *)(uintptr_t)ENTER_CHARACTER_BUTTON);
+            // Set Keyboard Button to be in released state
+            lv_btnmatrix_clear_btn_ctrl(keyboard, ENTER_CHARACTER_BUTTON, LV_BTNMATRIX_CTRL_CHECKED);
+            // Display the changes
+            lv_task_handler();
+            continue;
+        }
+
+        for (int j = 0; btn_map_lower[j] != '\0'; j++) {
+            printf_me("%c   %c\n", btn_map_lower[j], c);
+            if (btn_map_lower[j] == c) {
+                // Set Keyboard Button to be in pressed state
+                lv_btnmatrix_set_btn_ctrl(keyboard, j, LV_BTNMATRIX_CTRL_CHECKED);
+                // Pass the selected button value to the keyboard object
+                lv_btnmatrix_set_selected_btn(keyboard, j);
+                // Display the changes
+                lv_task_handler();
+                // Trigger the Keyboard Click event
+                lv_event_send(keyboard, LV_EVENT_CLICKED, (void *)(uintptr_t)j);
+                // Set Keyboard Button to be in released state
+                lv_btnmatrix_clear_btn_ctrl(keyboard, j, LV_BTNMATRIX_CTRL_CHECKED);
+                // Display the changes
+                lv_task_handler();
+                char_found = true;
+                break;
+            }
+        }
+
+        // If in previous itterations char was not found, try different Keyboard Mode
+        if (!char_found) {
+            // Set the Keyboard to Upper Cased Text Mode
+            lv_keyboard_set_mode(keyboard, LV_KEYBOARD_MODE_TEXT_UPPER);
+            // Display the changes
+            lv_task_handler();
+            for (int j = 0; btn_map_upper[j] != '\0'; j++) {
+                if (btn_map_upper[j] == c) {
+                    // Set Keyboard Button to be in pressed state
+                    lv_btnmatrix_set_btn_ctrl(keyboard, j, LV_BTNMATRIX_CTRL_CHECKED);
+                    // Pass the selected button value to the keyboard object
+                    lv_btnmatrix_set_selected_btn(keyboard, j);
+                    // Display the changes
+                    lv_task_handler();
+                    // Trigger the Keyboard Click event
+                    lv_event_send(keyboard, LV_EVENT_CLICKED, (void *)(uintptr_t)j);
+                    // Set Keyboard Button to be in released state
+                    lv_btnmatrix_clear_btn_ctrl(keyboard, j, LV_BTNMATRIX_CTRL_CHECKED);
+                    // Display the changes
+                    lv_task_handler();
+                    char_found = true;
+                    break;
+                }
+            }
+            // Return the Keyboard to Lower Cased Text Mode
+            lv_keyboard_set_mode(keyboard, LV_KEYBOARD_MODE_TEXT_LOWER);
+            // Display the changes
+            lv_task_handler();
+        }
+
+        // If in previous itterations char was not found, try different Keyboard Mode
+        if (!char_found) {
+            // Set the Keyboard to Special Cased Text Mode
+            lv_keyboard_set_mode(keyboard, LV_KEYBOARD_MODE_SPECIAL);
+            // Display the changes
+            lv_task_handler();
+            for (int j = 0; btn_map_special[j] != '\0'; j++) {
+                if (btn_map_special[j] == c) {
+                    // Set Keyboard Button to be in pressed state
+                    lv_btnmatrix_set_btn_ctrl(keyboard, j, LV_BTNMATRIX_CTRL_CHECKED);
+                    // Pass the selected button value to the keyboard object
+                    lv_btnmatrix_set_selected_btn(keyboard, j);
+                    // Display the changes
+                    lv_task_handler();
+                    // Trigger the Keyboard Click event
+                    lv_event_send(keyboard, LV_EVENT_CLICKED, (void *)(uintptr_t)j);
+                    // Set Keyboard Button to be in released state
+                    lv_btnmatrix_clear_btn_ctrl(keyboard, j, LV_BTNMATRIX_CTRL_CHECKED);
+                    // Display the changes
+                    lv_task_handler();
+                    char_found = true;
+                    break;
+                }
+            }
+            // Return the Keyboard to Lower Cased Text Mode
+            lv_keyboard_set_mode(keyboard, LV_KEYBOARD_MODE_TEXT_LOWER);
+            // Display the changes
+            lv_task_handler();
+        }
+
+        // If in previous itterations char was not found, try different Keyboard Mode
+        if (!char_found) {
+            // Set the Keyboard to Number Mode
+            lv_keyboard_set_mode(keyboard, LV_KEYBOARD_MODE_NUMBER);
+            // Display the changes
+            lv_task_handler();
+            for (int j = 0; btn_map_number[j] != '\0'; j++) {
+                printf_me("%c   %c\n", btn_map_number[j], c);
+                if (btn_map_number[j] == c) {
+                    // Set Keyboard Button to be in pressed state
+                    lv_btnmatrix_set_btn_ctrl(keyboard, j, LV_BTNMATRIX_CTRL_CHECKED);
+                    // Pass the selected button value to the keyboard object
+                    lv_btnmatrix_set_selected_btn(keyboard, j);
+                    // Display the changes
+                    lv_task_handler();
+                    // Trigger the Keyboard Click event
+                    lv_event_send(keyboard, LV_EVENT_CLICKED, (void *)(uintptr_t)j);
+                    // Set Keyboard Button to be in released state
+                    lv_btnmatrix_clear_btn_ctrl(keyboard, j, LV_BTNMATRIX_CTRL_CHECKED);
+                    // Display the changes
+                    lv_task_handler();
+                    char_found = true;
+                    break;
+                }
+            }
+            // Return the Keyboard to Lower Cased Text Mode
+            lv_keyboard_set_mode(keyboard, LV_KEYBOARD_MODE_TEXT_LOWER);
+            // Display the changes
+            lv_task_handler();
+        }
+    }
+}
+#endif
+
 int main(void)
 {
     /* Do not remove this line or clock might not be set correctly. */
@@ -49,7 +220,9 @@ int main(void)
     #endif
 
 #if IS_PD_SETUP
-    char restart[] = "MIKROE LVGL Keyboard demo...";
+    char line_1[] = "You are looking at MIKROE LVGL Keyboard Demo.\n\nIf you want to find more Demos, visit:\n";
+    char github[] = "https://github.com/MikroElektronika/necto_demos";
+    char line_2[] = "\n\nThis demo will restart in 2 seconds...";
 #else
     char restart[] = "Restarting Demo...";
 #endif
@@ -65,12 +238,19 @@ int main(void)
     lv_event_send(lvgl_second_screen_ui.textarea_0, LV_EVENT_FOCUSED, NULL);
     lv_textarea_set_text(lvgl_second_screen_ui.textarea_0, "");
 
+#if IS_PD_SETUP
+    lv_textarea_set_text(lvgl_second_screen_ui.textarea_0, "");
+    lv_task_handler();
+    Delay_ms(3000);
+    show_second_screen();
+    lv_task_handler();
+#endif
+
     /////////////////////////////LVGL specific timing routine (DO NOT DELETE)/////////////////////////
     while (1)
     {
 #if !IS_PD_SETUP
         if (check_flag) {
-#endif
             for (uint8_t counter = 0; counter < sizeof(restart); counter++) {
                 lv_textarea_add_char(lvgl_second_screen_ui.textarea_0, restart[counter]);
                 lv_task_handler();
@@ -80,15 +260,13 @@ int main(void)
             show_main_screen();
             lv_textarea_set_text(lvgl_second_screen_ui.textarea_0, "");
             check_flag = 0;
-#if !IS_PD_SETUP
         }
-#endif
-        lv_task_handler();
-        Delay_ms(1);
-
-#if IS_PD_SETUP
-        Delay_ms(3000);
-        show_second_screen();
+#else
+        simulate_button_clicks(lvgl_second_screen_ui.keyboard_0, line_1);
+        simulate_button_clicks(lvgl_second_screen_ui.keyboard_0, github);
+        simulate_button_clicks(lvgl_second_screen_ui.keyboard_0, line_2);
+        Delay_ms(2000);
+        lv_textarea_set_text(lvgl_second_screen_ui.textarea_0, "");
 #endif
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////
