@@ -44,18 +44,16 @@ int main(void)
 
 #if PD_SETUP
     // Fetch all widget screen coordinates
-    coordinates[0] = lv_obj_get_y(chart1_cont);
-    coordinates[1] = lv_obj_get_y(chart2_cont);
-    coordinates[2] = lv_obj_get_y(lv_obj_get_parent(meter1)) + METER1_OFFSET;
-    coordinates[3] = lv_obj_get_y(lv_obj_get_parent(meter2)) + METER2_OFFSET;
-    coordinates[4] = lv_obj_get_y(lv_obj_get_parent(meter3)) + METER3_OFFSET;
+    coordinates[0] = lv_obj_get_y(lv_obj_get_parent(meter1)) + METER1_OFFSET;
+    coordinates[1] = lv_obj_get_y(lv_obj_get_parent(meter2)) + METER2_OFFSET;
+    coordinates[2] = lv_obj_get_y(lv_obj_get_parent(meter3)) + METER3_OFFSET;
 #endif
 
     /////////////////////////////LVGL specific timing routine (DO NOT DELETE)/////////////////////////
     while (1)
     {
 #if PD_SETUP
-        if (secondCount) 
+        if (secondCount)
         {
             // Every defined PD_SCROLL_DELAY_MS seconds, scroll automaticaly to next widget
             secondCount = false;
