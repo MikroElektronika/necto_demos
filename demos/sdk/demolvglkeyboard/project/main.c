@@ -237,10 +237,9 @@ int main(void)
     lv_obj_add_state(lvgl_second_screen_ui.textarea_0, LV_STATE_FOCUSED);
     lv_event_send(lvgl_second_screen_ui.textarea_0, LV_EVENT_FOCUSED, NULL);
     lv_textarea_set_text(lvgl_second_screen_ui.textarea_0, "");
+    lv_task_handler();
 
 #if IS_PD_SETUP
-    lv_textarea_set_text(lvgl_second_screen_ui.textarea_0, "");
-    lv_task_handler();
     Delay_ms(3000);
     show_second_screen();
     lv_task_handler();
@@ -250,6 +249,8 @@ int main(void)
     while (1)
     {
 #if !IS_PD_SETUP
+        lv_task_handler();
+        Delay_ms(5);
         if (check_flag) {
             for (uint8_t counter = 0; counter < sizeof(restart); counter++) {
                 lv_textarea_add_char(lvgl_second_screen_ui.textarea_0, restart[counter]);
