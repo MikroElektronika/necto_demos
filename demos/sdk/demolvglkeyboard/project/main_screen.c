@@ -9,7 +9,7 @@ void init_main_screen()
     #if (_TFT_WIDTH_ == 480)
     lv_obj_set_x(lvgl_main_screen_ui.img_0, 170);
     lv_obj_set_y(lvgl_main_screen_ui.img_0, 120);
-    lv_img_set_zoom(lvgl_main_screen_ui.img_0, 400);
+    lv_img_set_zoom(lvgl_main_screen_ui.img_0, 0);
     lv_obj_set_x(lvgl_main_screen_ui.btn_0, 100);
     lv_obj_set_y(lvgl_main_screen_ui.btn_0, 200);
     lv_obj_set_style_text_font(lvgl_main_screen_ui.btn_0, &Ubuntu_Regular_s24_r32_127, LV_PART_MAIN | LV_STATE_DEFAULT);
