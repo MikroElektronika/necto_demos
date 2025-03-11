@@ -4,7 +4,18 @@ lvgl_second_screen_ui_t lvgl_second_screen_ui;
 
 void init_second_screen()
 {
-  init_second_screen_ui(&lvgl_second_screen_ui);
+    init_second_screen_ui(&lvgl_second_screen_ui);
+    // Adjust the size of keyboard and text area for the 4 inch display
+    #if (_TFT_WIDTH_ == 480)
+    lv_obj_set_x(lvgl_second_screen_ui.keyboard_0, 0);
+    lv_obj_set_y(lvgl_second_screen_ui.keyboard_0, 157);
+    lv_obj_set_width(lvgl_second_screen_ui.keyboard_0, 480);
+    lv_obj_set_height(lvgl_second_screen_ui.keyboard_0, 110);
+    lv_obj_set_x(lvgl_second_screen_ui.textarea_0, 4);
+    lv_obj_set_y(lvgl_second_screen_ui.textarea_0, 3);
+    lv_obj_set_width(lvgl_second_screen_ui.textarea_0, 473);
+    lv_obj_set_height(lvgl_second_screen_ui.textarea_0, 142);
+    #endif
 }
 
 void show_second_screen()
