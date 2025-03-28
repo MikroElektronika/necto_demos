@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 3.1.0
+
+- Added macro checks to ensure default values
+- Improved example with more features and better stability
+
 ## Version 3.0.0
 
 - New structure
