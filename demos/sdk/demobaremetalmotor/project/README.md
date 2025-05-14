@@ -34,7 +34,7 @@ This is a simple example of motor application using only Bare Metal code with Br
 
 ## Software Support
 
-We provide code for demonstrating the usage of functions contained in Analog In driver library. To run this example, follow these steps:
+We provide code for demonstrating the usage of functions of Bare Metal files. To run this example, follow these steps:
 
 1. Install the package from Package manager.
 2. Open example.
