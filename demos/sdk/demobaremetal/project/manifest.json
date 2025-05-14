@@ -1,0 +1,16 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "Bare Metal Demo Pack"
+            }
+        ]
+    },
+    "display_name": "Bare Metal Demo Pack",
+    "name": "mikroe.demo.sdk.baremetal.pack",
+    "type": "project",
+    "version": "3.0.0",
+    "demo": true,
+    "link_github": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/sdk/demobaremetal/project"
+}
