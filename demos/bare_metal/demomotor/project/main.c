@@ -12,7 +12,7 @@
  * Configures Mikrobus pins used by Brushless 17 Click Board.
  *
  * ## Rotate the motor
- * Controls the motor speed by changing the PWM duty cycle.
+ * Controls the motor speed and direction by changing the PWM duty cycle.
  * The duty cycle ranges from 40% to 100% and back.
  *
  * @author MIKROE SDK Team
@@ -34,6 +34,13 @@ int main( void )
     {
         // Set counter-clockwise direction.
         set_motor_direction( MOTOR_DIRECTION_CCW );
+        // Increase motor speed from 40% to 100% for 10 seconds.
+        pwm_sweep( 10.0, MOTOR_SPEED_INCREASE );
+        // Decrease motor speed from 100% to 40% for 10 seconds.
+        pwm_sweep( 10.0, MOTOR_SPEED_DECREASE );
+
+        // Set counter-clockwise direction.
+        set_motor_direction( MOTOR_DIRECTION_CW );
         // Increase motor speed from 40% to 100% for 10 seconds.
         pwm_sweep( 10.0, MOTOR_SPEED_INCREASE );
         // Decrease motor speed from 100% to 40% for 10 seconds.

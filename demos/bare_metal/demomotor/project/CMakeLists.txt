@@ -1,11 +1,28 @@
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.19)
 
-project(bare_metal_demo_pack LANGUAGES C ASM)
+project(motor_demo LANGUAGES C ASM)
 
 include(mikroeUtils)
 
-## Motor
-add_subdirectory(motor)
+set(PROJECT_TYPE "mikrosdk" CACHE STRING "" FORCE)
+
+if (${_MSDK_BOARD_NAME_} STREQUAL "RA4M1_CLICKER")
+    set(vendor renesas)
+else()
+    message(FATAL_ERROR "This Demo only supports Bare Metal setup with the following boards:\n- RA4M1 Clicker\nPlease select a setup for this board.")
+endif()
+
+add_executable(motor_demo
+    main.c
+    motor_demo.h
+    ${vendor}/motor_demo.c
+)
+
+find_package(MikroC.Core REQUIRED)
+target_link_libraries(motor_demo
+    PUBLIC
+        MikroC.Core
+)
 
 if(COMPILER_REVISION)
     if(${COMPILER_REVISION} VERSION_GREATER_EQUAL "1.0")

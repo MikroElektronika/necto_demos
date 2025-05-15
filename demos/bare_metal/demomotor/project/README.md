@@ -1,6 +1,6 @@
 # Bare Metal Motor Demo
 
-This is a simple example of motor application using only Bare Metal code with Brushless 17 Click Board and [BLDC Motor with Hall sensor](https://www.mikroe.com/motor-bldc-42blf01-with-hall-sensor).
+This is a simple example of motor application using only Bare Metal code with Brushless 17 Click Board and [BLDC Motor with Hall sensor](https://www.mikroe.com/motor-bldc-42blf01-with-hall-sensor). It rotates the motor in 2 directions - clockwise and counter-clockwise. User specifies the sweep time and duty cycle goes from 40% to 100% and back during 2 sweep periods.
 
 ---
 
@@ -30,7 +30,7 @@ This is a simple example of motor application using only Bare Metal code with Br
    - **Output** → +12V
 
    **Analog Pin Note**
-   - The **analog pin** should be wired to **3.3V (3v3)** using the **Terminal Click** and a **jumper**, since some MCUs don't allow to configure AN pin as digital high.
+   - The **analog pin** should be wired to **5V** using the **Terminal Click** and a **jumper**, since some MCUs don't allow to configure AN pin as digital high with enough voltage, but this pin is used as break trigger when grounded.
 
 ## Software Support
 
