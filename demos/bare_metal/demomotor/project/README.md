@@ -47,6 +47,5 @@ To run this example, follow these steps:
 4. Choose adequate bare-metal setup and the project will open.
 5. Program the example by clicking on **Flash**.
 6. You should be able to see the motor working.
-7. NOTE: Demo Supports only RA4M1 Clicker Board for now.
 
 ---
