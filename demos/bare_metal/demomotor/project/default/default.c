@@ -22,6 +22,13 @@
 
 #include "../motor_demo.h"
 
+/*
+ *  If you see this note, it means that you have chosen a setup without predefined
+ *  bare metal implementation for this demo. You can either create a setup with one
+ *  of supported boards defined in the README.md file or follow TODO comments and
+ *  configure code manually.
+*/
+
 // Delay parameter for frequency adjustment.
 // Note: Changing this value also affects duration of motor sweeping.
 #define DELAY_PARAMETER 1875
@@ -31,10 +38,12 @@ void set_motor_direction( motor_direction_t direction )
     // Clockwise direction.
     if ( MOTOR_DIRECTION_CW == direction )
         // TODO: set MIKROBUS RST to low.
+        ;
 
     // Counter-clockwise direction.
     if ( MOTOR_DIRECTION_CCW == direction )
         // TODO: set MIKROBUS RST to high.
+        ;
 
 }
 

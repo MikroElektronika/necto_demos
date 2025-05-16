@@ -34,7 +34,12 @@ This is a simple example of motor application using only Bare Metal code with Br
 
 ## Software Support
 
-We provide code for demonstrating the usage of functions of Bare Metal files. To run this example, follow these steps:
+This demo provides full code for the following boards:
+   - RA4M1 Clicker
+
+For other boards and MCUs you will have to follow `TODO` comments and adjust the code manually.
+
+To run this example, follow these steps:
 
 1. Install the package from Package manager.
 2. Open example.
