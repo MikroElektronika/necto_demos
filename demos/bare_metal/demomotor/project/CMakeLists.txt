@@ -3,19 +3,17 @@ cmake_minimum_required(VERSION 3.19)
 project(motor_demo LANGUAGES C ASM)
 
 include(mikroeUtils)
+include(demomotorutils)
 
 set(PROJECT_TYPE "mikrosdk" CACHE STRING "" FORCE)
 
-if (${_MSDK_BOARD_NAME_} STREQUAL "RA4M1_CLICKER")
-    set(vendor renesas)
-else()
-    message(FATAL_ERROR "This Demo only supports Bare Metal setup with the following boards:\n- RA4M1 Clicker\nPlease select a setup for this board.")
-endif()
+# Choose the board and vendor for this example
+define_vendor_and_board(vendor board)
 
 add_executable(motor_demo
     main.c
     motor_demo.h
-    ${vendor}/motor_demo.c
+    ${vendor}/${board}.c
 )
 
 find_package(MikroC.Core REQUIRED)
