@@ -3,12 +3,12 @@
         "clicks": [],
         "examples": [
             {
-                "path": "Bare Metal Demo Pack"
+                "path": "Bare Metal Motor Demo"
             }
         ]
     },
-    "display_name": "Bare Metal Demo Pack",
-    "name": "mikroe.demo.sdk.baremetal.pack",
+    "display_name": "Bare Metal Motor Demo",
+    "name": "mikroe.demo.bare_metal.motor",
     "type": "project",
     "version": "3.0.0",
     "demo": true,
