@@ -18,6 +18,10 @@ add_executable(motor_demo
     ${vendor}/${board}.c
 )
 
+target_include_directories(motor_demo
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
 find_package(MikroC.Core REQUIRED)
 target_link_libraries(motor_demo
     PUBLIC

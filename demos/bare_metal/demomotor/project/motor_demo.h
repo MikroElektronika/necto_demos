@@ -38,14 +38,26 @@
 
 #include "mcu.h"
 
+/**
+ * @enum motor_direction_t
+ * @brief Motor rotation direction.
+ *
+ * This enumeration defines possible rotation directions for the motor.
+ */
 typedef enum {
-    MOTOR_DIRECTION_CW = 0,
-    MOTOR_DIRECTION_CCW
+    MOTOR_DIRECTION_CW = 0,   /**< Clockwise rotation. */
+    MOTOR_DIRECTION_CCW       /**< Counter-clockwise rotation. */
 } motor_direction_t;
 
+/**
+ * @enum motor_speed_t
+ * @brief Motor speed adjustment direction.
+ *
+ * This enumeration specifies whether the motor speed should be increased or decreased.
+ */
 typedef enum {
-    MOTOR_SPEED_DECREASE = 0,
-    MOTOR_SPEED_INCREASE
+    MOTOR_SPEED_DECREASE = 0, /**< Decrease motor speed. */
+    MOTOR_SPEED_INCREASE      /**< Increase motor speed. */
 } motor_speed_t;
 
 /**
@@ -78,4 +90,4 @@ void pwm_sweep( float duration, motor_speed_t mode );
  */
 void configure_mikrobus();
 
-#endif
+#endif // MOTOR_DEMO_H

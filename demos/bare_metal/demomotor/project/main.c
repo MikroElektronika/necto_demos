@@ -2,21 +2,30 @@
  * @file main.c
  * @brief Bare Metal Motor Demo
  *
- * # Description
- * This example demonstrates the use of the Brushless 17 Click Board by driving the
- * motor in both directions at different speeds using Bare Metal NECTOStudio setup.
+ * @mainpage Bare Metal Brushless 17 Click Demo
  *
- * The demo application is composed of two sections:
+ * @section overview Overview
+ * This example demonstrates basic control of the **Brushless 17 Click** board using a
+ * bare-metal project setup in **NECTO Studio**. The motor is rotated at various speeds
+ * by modifying the PWM duty cycle.
  *
- * ## Configure Mikrobus
- * Configures Mikrobus pins used by Brushless 17 Click Board.
+ * @section app_structure Application Structure
+ * The demo application is divided into two key sections:
  *
- * ## Rotate the motor
- * Controls the motor speed and direction by changing the PWM duty cycle.
- * The duty cycle ranges from 40% to 100% and back.
+ * @subsection configure_mikrobus Configure MikroBUS
+ * Initializes and configures the MikroBUS pins used by the Brushless 17 Click board:
+ * - RST (Reset)
+ * - PWM (Pulse Width Modulation)
+ * - INT, AN, CS (if used)
+ *
+ * @subsection motor_control Rotate the Motor
+ * The motor is driven by adjusting the PWM duty cycle. The duty cycle ranges from 40%
+ * up to 100%, then back to 40%, simulating acceleration and deceleration.
+ *
+ * @note The demo assumes the motor is connected properly to the Click board and that
+ * proper power is supplied.
  *
  * @author MIKROE SDK Team
- *
  */
 
 #include "motor_demo.h"
@@ -34,13 +43,6 @@ int main( void )
     {
         // Set counter-clockwise direction.
         set_motor_direction( MOTOR_DIRECTION_CCW );
-        // Increase motor speed from 40% to 100% for 10 seconds.
-        pwm_sweep( 10.0, MOTOR_SPEED_INCREASE );
-        // Decrease motor speed from 100% to 40% for 10 seconds.
-        pwm_sweep( 10.0, MOTOR_SPEED_DECREASE );
-
-        // Set counter-clockwise direction.
-        set_motor_direction( MOTOR_DIRECTION_CW );
         // Increase motor speed from 40% to 100% for 10 seconds.
         pwm_sweep( 10.0, MOTOR_SPEED_INCREASE );
         // Decrease motor speed from 100% to 40% for 10 seconds.

@@ -20,28 +20,75 @@
 **  USE OR OTHER DEALINGS IN THE SOFTWARE.
 ****************************************************************************/
 
-#include "../motor_demo.h"
+#include "motor_demo.h"
 
-// Delay parameter for frequency adjustment.
-// Note: Changing this value also affects duration of motor sweeping.
-#define DELAY_PARAMETER 1875
+/**
+ * @defgroup MikroBUS_Pin_Control MikroBUS Pin Control Macros
+ * @brief User-defined macros for configuring and controlling MikroBUS pins.
+ *
+ * These macros provide control over the direction and state of specific MikroBUS pins
+ * such as RST, PWM, AN, CS, and INT.
+ * @{
+ */
+
+/** @brief Set the RST pin as output. */
+#define MIKROBUS_RST_SET_OUTPUT R_PORT4->PDR_b.PDR7 = 1
+/** @brief Drive the RST pin low. */
+#define MIKROBUS_RST_SET_LOW    R_PORT4->PODR_b.PODR7 = 0
+/** @brief Drive the RST pin high. */
+#define MIKROBUS_RST_SET_HIGH   R_PORT4->PODR_b.PODR7 = 1
+
+/** @brief Set the PWM pin as output. */
+#define MIKROBUS_PWM_SET_OUTPUT R_PORT1->PDR_b.PDR7 = 1
+/** @brief Drive the PWM pin low. */
+#define MIKROBUS_PWM_SET_LOW    R_PORT1->PODR_b.PODR7 = 0
+/** @brief Drive the PWM pin high. */
+#define MIKROBUS_PWM_SET_HIGH   R_PORT1->PODR_b.PODR7 = 1
+
+/** @brief Set the AN pin as output. */
+#define MIKROBUS_AN_SET_OUTPUT  R_PORT0->PDR_b.PDR0 = 1
+/** @brief Drive the AN pin high. */
+#define MIKROBUS_AN_SET_HIGH    R_PORT0->PODR_b.PODR0 = 1
+
+/** @brief Set the CS pin as output. */
+#define MIKROBUS_CS_SET_OUTPUT  R_PORT1->PDR_b.PDR3 = 1
+/** @brief Drive the CS pin high. */
+#define MIKROBUS_CS_SET_HIGH    R_PORT1->PODR_b.PODR3 = 1
+
+/** @brief Set the INT pin as output. */
+#define MIKROBUS_INT_SET_OUTPUT R_PORT3->PDR_b.PDR2 = 1
+/** @brief Drive the INT pin high. */
+#define MIKROBUS_INT_SET_HIGH   R_PORT3->PODR_b.PODR2 = 1
+
+/** @} */ // end of MikroBUS_Pin_Control
+
+/**
+ * @def DELAY_PARAMETER_US
+ * @brief Delay parameter in microseconds for frequency adjustment.
+ *
+ * This macro defines the base delay in microseconds used to control timing
+ * in motor control routines, such as frequency adjustment or sweeping cycles.
+ *
+ * @note Changing this value directly impacts the duration and frequency of
+ * motor sweeping operations. A lower value increases the sweep speed, while
+ * a higher value slows it down.
+ */
+#define DELAY_PARAMETER_US 1875
 
 void set_motor_direction( motor_direction_t direction )
 {
     // Clockwise direction.
     if ( MOTOR_DIRECTION_CW == direction )
-        // Set MIKROBUS RST to low.
-        R_PORT4->PODR_b.PODR7 = 0;
+        MIKROBUS_RST_SET_LOW;
 
     // Counter-clockwise direction.
     if ( MOTOR_DIRECTION_CCW == direction )
-        // Set MIKROBUS RST to high.
-        R_PORT4->PODR_b.PODR7 = 1;
+        MIKROBUS_RST_SET_HIGH;
 }
 
 void pwm_sweep( float duration, motor_speed_t mode )
 {
-    uint16_t period_us = DELAY_PARAMETER;
+    uint16_t period_us = DELAY_PARAMETER_US;
     float num_steps = duration * 1000; // Convert sweep time to milliseconds.
     float duty_cycle;
     float current_step;
@@ -57,13 +104,13 @@ void pwm_sweep( float duration, motor_speed_t mode )
             duty_cycle = ( current_step * 100 ) / num_steps;
             pulse_us = ( uint32_t )( ( duty_cycle * period_us ) / 100 );
 
-            // Set MIKROBUS PWM to high.
-            R_PORT1->PODR_b.PODR7 = 1;
+            MIKROBUS_PWM_SET_HIGH;
+
             // Delay for high signal duration.
             Delay_us( pulse_us );
 
-            // Set MIKROBUS PWM to low.
-            R_PORT1->PODR_b.PODR7 = 0;
+            MIKROBUS_PWM_SET_LOW;
+
             // Delay for low signal duration.
             if ( period_us != pulse_us )
                 Delay_us( period_us - pulse_us );
@@ -81,13 +128,13 @@ void pwm_sweep( float duration, motor_speed_t mode )
             duty_cycle = ( current_step * 100 ) / num_steps;
             pulse_us = ( uint32_t )( ( duty_cycle * period_us ) / 100 );
 
-            // Set MIKROBUS PWM to high.
-            R_PORT1->PODR_b.PODR7 = 1;
+            MIKROBUS_PWM_SET_HIGH;
+
             // Delay for high signal duration.
             Delay_us( pulse_us );
 
-            // Set MIKROBUS PWM to low.
-            R_PORT1->PODR_b.PODR7 = 0;
+            MIKROBUS_PWM_SET_LOW;
+
             // Delay for low signal duration.
             if ( period_us != pulse_us )
                 Delay_us( period_us - pulse_us );
@@ -99,21 +146,16 @@ void pwm_sweep( float duration, motor_speed_t mode )
 
 void configure_mikrobus()
 {
-    // Set MIKROBUS AN pin as output high.
-    R_PORT0->PDR_b.PDR0 = 1;
-    R_PORT0->PODR_b.PODR0 = 1;
+    MIKROBUS_AN_SET_OUTPUT;
+    MIKROBUS_AN_SET_HIGH;
 
-    // Set MIKROBUS PWM as output.
-    R_PORT1->PDR_b.PDR7 = 1;
+    MIKROBUS_PWM_SET_OUTPUT;
 
-    // Set MIKROBUS RST as output.
-    R_PORT4->PDR_b.PDR7 = 1;
+    MIKROBUS_RST_SET_OUTPUT;
 
-    // Set MIKROBUS CS as output high.
-    R_PORT1->PDR_b.PDR3 = 1;
-    R_PORT1->PODR_b.PODR3 = 1;
+    MIKROBUS_CS_SET_OUTPUT;
+    MIKROBUS_CS_SET_HIGH;
 
-    // Set MIKROBUS INT as output high.
-    R_PORT3->PDR_b.PDR2 = 1;
-    R_PORT3->PODR_b.PODR2 = 1;
+    MIKROBUS_INT_SET_OUTPUT;
+    MIKROBUS_INT_SET_HIGH;
 }
