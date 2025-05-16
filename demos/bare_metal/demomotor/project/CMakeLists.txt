@@ -19,7 +19,8 @@ add_executable(motor_demo
 )
 
 target_include_directories(motor_demo
-    ${CMAKE_CURRENT_SOURCE_DIR}
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 find_package(MikroC.Core REQUIRED)
