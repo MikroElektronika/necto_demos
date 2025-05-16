@@ -14,9 +14,7 @@
  *
  * @subsection configure_mikrobus Configure MikroBUS
  * Initializes and configures the MikroBUS pins used by the Brushless 17 Click board:
- * - RST (Reset)
- * - PWM (Pulse Width Modulation)
- * - INT, AN, CS (if used)
+ * - RST, PWM, INT, AN and CS
  *
  * @subsection motor_control Rotate the Motor
  * The motor is driven by adjusting the PWM duty cycle. The duty cycle ranges from 40%
