@@ -50,6 +50,8 @@ Current demos:
     + [DESIGNER](./demos/sdk/demodesigner/project/README.md)
     + [LVGL-WIDGET](./demos/sdk/demolvglwidget/project/README.md)
     + [LVGL-KEYBOARD](./demos/sdk/demolvglkeyboard/project/README.md)
++ **Bare Metal**
+  + [MOTOR](./demos/bare_metal/demomotor/project/README.md)
 
 ---
 
