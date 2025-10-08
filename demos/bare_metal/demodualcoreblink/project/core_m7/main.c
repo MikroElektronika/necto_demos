@@ -39,8 +39,8 @@ LedConfig leds[] = {
 #define MODER_MODE_MASK     0x3U
 #define MODER_MODE_OUTPUT   0x1U
 
-// TODO - change value to change delay duration
-#define DELAY_COUNTER 1000000;
+// TODO - change value to adjust delay duration
+#define DELAY_COUNTER 1000000
 
 void delay( uint32_t duration )
 {
