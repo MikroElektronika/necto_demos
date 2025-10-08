@@ -8,7 +8,6 @@ target_compile_options(core_m4 PRIVATE "-mcpu=cortex-m4")
 target_compile_definitions(core_m4 PRIVATE CORE_CM4)
 set(SECONDARY_CORE "core_m4" CACHE STRING "Secondary core selection" FORCE)
 
-
 find_package(MikroC.Core REQUIRED)
 target_link_libraries(core_m4
     PUBLIC
