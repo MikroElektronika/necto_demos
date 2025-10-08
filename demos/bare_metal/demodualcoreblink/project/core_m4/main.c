@@ -22,7 +22,7 @@
 
 #include "mcu.h"
 
-// TODO - change value to change delay duration
+// TODO - change value to adjust delay duration
 #define DELAY_COUNTER 100000;
 
 // Busy-wait delay function.
