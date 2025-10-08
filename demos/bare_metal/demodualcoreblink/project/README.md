@@ -12,7 +12,7 @@ This is a simple example of LED toggling application using only Bare Metal code 
 
 ## Hardware support
 
-### Connect CODEGRIP to external programming pins on the board and power the board
+Connect CODEGRIP to external programming pins on the board and power the board.
 
 ## Software Support
 
