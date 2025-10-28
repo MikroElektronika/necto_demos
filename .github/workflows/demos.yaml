@@ -28,7 +28,7 @@ jobs:
           private-key: ${{ secrets.MIKROE_DEMOS_KEY }}
 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           token: ${{ steps.app-token.outputs.token }}
 
