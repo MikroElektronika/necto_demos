@@ -7,7 +7,7 @@
             }
         ]
     },
-    "display_name": "Bare Metal Blinking Demo",
+    "display_name": "Bare Metal LED Blinking Demo",
     "name": "mikroe.demo.bare_metal.blink",
     "type": "project",
     "version": "3.0.0",
