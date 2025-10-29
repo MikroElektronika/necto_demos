@@ -1,0 +1,16 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "Plot Demo"
+            }
+        ]
+    },
+    "display_name": "Plot Demo",
+    "name": "mikroe.demo.sdk.plot",
+    "type": "project",
+    "version": "3.0.0",
+    "demo": true,
+    "link_github": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/sdk/demoplot/project"
+}
