@@ -107,6 +107,6 @@ demoplot/project
 
 ---
 
-![mikroe_logo](https://download.mikroe.com/images/mikrosdk/v2/mikroe-logo-dark.png)
+![mikroe_logo](http://www.mikroe.com/img/designs/beta/logo_small.png)
 
 ---
