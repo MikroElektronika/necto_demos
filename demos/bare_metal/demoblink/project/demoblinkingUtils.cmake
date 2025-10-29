@@ -21,9 +21,9 @@ function(define_vendor_and_board vendor board)
         "
         This Demo for now only supports setup with the following boards:
         - RA4M1 Clicker
-        - RA2E3 Fast Prototyping Board
-        - RA4M3 Evaluation Kit
-        - RA6M5 Evaluation Kit
+        - Fast Prototyping Board for RA2E3 MCU Group
+        - Evaluation Kit for RA4M3 MCU Group
+        - Evaluation Kit for RA6M5 MCU Group
 
         Please select a setup for one of these boards.
         "

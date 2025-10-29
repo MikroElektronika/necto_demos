@@ -22,7 +22,7 @@ add_executable(bare_metal_blinking_demo
     ${vendor}/blinking.c
 )
 
-target_include_directories(bare_metal_blinking_demo 
+target_include_directories(bare_metal_blinking_demo
     PUBLIC
         ${vendor}/${board}
 )

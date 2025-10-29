@@ -3,7 +3,7 @@
         "clicks": [],
         "examples": [
             {
-                "path": "Bare Metal Motor Demo"
+                "path": "Bare Metal Blinking Demo"
             }
         ]
     },
@@ -12,5 +12,5 @@
     "type": "project",
     "version": "3.0.0",
     "demo": true,
-    "link_github": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/bare_metal/demorenesasblink/project"
+    "link_github": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/bare_metal/demoblink/project"
 }
