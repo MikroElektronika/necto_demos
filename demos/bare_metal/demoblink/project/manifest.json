@@ -1,0 +1,16 @@
+{
+    "contents": {
+        "clicks": [],
+        "examples": [
+            {
+                "path": "Bare Metal Motor Demo"
+            }
+        ]
+    },
+    "display_name": "Bare Metal Blinking Demo",
+    "name": "mikroe.demo.bare_metal.blink",
+    "type": "project",
+    "version": "3.0.0",
+    "demo": true,
+    "link_github": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/bare_metal/demorenesasblink/project"
+}
