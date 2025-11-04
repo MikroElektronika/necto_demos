@@ -1,24 +1,12 @@
-# Bare Metal Motor Demo
+# Changelog
 
-This is a simple example of pin bare-metal pin configuration and toggling. This example configures pins as outputs
-and toggles their state every second.
+## Version 3.0.0
 
----
+- Initial release
 
-- **Authors**     : [MIKROE](https://github.com/MikroElektronika)
-- **Version**     : 3.0.1
-- **Date**        : ${COPYRIGHT_YEAR}.
+## Version 3.0.1
 
----
-
-## Hardware support
-
-### Place [Tester Click](https://www.mikroe.com/tester-click?srsltid=AfmBOoq6biSjTrCJXIGcEsO4PI23WyMEKc--3krjfm_Jsz-s_Zp7Mt6g) on the MikroBUS if it is present
-
-## Software Support
-
-This demo provides full code for the following boards:
-   - [RA4M1 Clicker](https://www.mikroe.com/ra4m1-clicker?srsltid=AfmBOorwH7gUaApWiWyyXVQRQNEHzeMCsVPUxxFcD2GihE-hPBD5dmTt)
+- Added support for the following boards:
    - [Evaluation Kit for RA2A1 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra2a1)
    - [Evaluation Kit for RA2L2 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra2l2)
    - [Evaluation Kit for RA2A2 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra2a2)
@@ -30,13 +18,11 @@ This demo provides full code for the following boards:
    - [Evaluation Kit for RA4L1 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra4l1)
    - [Evaluation Kit for RA4M1 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra4m1)
    - [Evaluation Kit for RA4M2 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra4m2)
-   - [Evaluation Kit for RA4M3 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra4m3)
    - [Evaluation Kit for RA6E2 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra6e2)
    - [Evaluation Kit for RA6M1 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra6m1)
    - [Evaluation Kit for RA6M2 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra6m2)
    - [Evaluation Kit for RA6M3 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra6m3)
    - [Evaluation Kit for RA6M4 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra6m4)
-   - [Evaluation Kit for RA6M5 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra6m5)
    - [Evaluation Kit for RA8D1 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra8d1)
    - [Evaluation Kit for RA8E2 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra8e2)
    - [Evaluation Kit for RA8M1 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra8m1)
@@ -45,7 +31,6 @@ This demo provides full code for the following boards:
    - [Fast Prototyping Board for RA0E2 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/fpb-ra0e2)
    - [Fast Prototyping Board for RA2E1 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/fpb-ra2e1)
    - [Fast Prototyping Board for RA2E2 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/fpb-ra2e2)
-   - [Fast Prototyping Board for RA2E3 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/fpb-ra2e3)
    - [Fast Prototyping Board for RA2T1 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/fpb-ra2t1)
    - [Fast Prototyping Board for RA4E1 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/fpb-ra4e1)
    - [Fast Prototyping Board for RA4T1 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/fpb-ra4t1)
@@ -55,16 +40,3 @@ This demo provides full code for the following boards:
    - [Motor Control Evaluation System for RA Family - RA6T1 Group](https://www.renesas.com/en/design-resources/boards-kits/motor-rssk-ra6t1)
    - [Renesas Flexible Motor Control CPU Board for RA6T2 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/mcb-ra6t2)
    - [Renesas Flexible Motor Control CPU Board for RA8T1 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/mcb-ra8t1)
-
-For other boards and MCUs you will have to follow `TODO` comments and adjust the code manually.
-
-To run this example, follow these steps:
-
-1. Install the package from Package manager.
-2. Open example.
-3. It will take you to setups, so make one for your hardware.
-4. Choose adequate bare-metal setup and the project will open.
-5. Program the example by clicking on **Flash**.
-6. You should be able to see the motor working.
-
----
