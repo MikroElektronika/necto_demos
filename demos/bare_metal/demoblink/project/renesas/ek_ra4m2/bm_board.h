@@ -20,16 +20,16 @@ typedef struct {
 static const Pin mikrobus_pins[] = {
     { R_PORT0, 1 << 0 },    // AN
     { R_PORT1, 1 << 15 },   // RST
-    { R_PORT2, 1 << 5 },    // CS
-    { R_PORT2, 1 << 4 },    // SCK
-    { R_PORT2, 1 << 2 },    // CIPO
-    { R_PORT2, 1 << 3 },    // COPI
-    { R_PORT4, 1 << 8 },    // PWM
-    { R_PORT4, 1 << 9 },    // INT
+    { R_PORT6, 1 << 3 },    // CS
+    { R_PORT6, 1 << 0 },    // SCK
+    { R_PORT6, 1 << 1 },    // CIPO
+    { R_PORT6, 1 << 2 },    // COPI
+    { R_PORT1, 1 << 11 },   // PWM
+    { R_PORT5, 1 << 2 },    // INT
     { R_PORT1, 1 << 0 },    // RX
     { R_PORT1, 1 << 1 },    // TX
-    { R_PORT5, 1 << 12 },   // SCL
-    { R_PORT5, 1 << 11 },   // SDA
+    { R_PORT1, 1 << 13 },   // SCL
+    { R_PORT1, 1 << 12 },   // SDA
 };
 
 /**
@@ -42,7 +42,7 @@ static const Pin mikrobus_pins[] = {
 static const Pin board_leds[] = {
     { R_PORT4, 1 << 15 },  // LD1
     { R_PORT4, 1 << 4 },   // LD2
-    { R_PORT4, 1 << 0 },   // LD3
+    { R_PORT4, 1 << 5 },   // LD3
 };
 
 /**

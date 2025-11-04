@@ -18,18 +18,7 @@ typedef struct {
  * mapped to a specific MCU port and pin mask.
  */
 static const Pin mikrobus_pins[] = {
-    { R_PORT0, 1 << 0 },    // AN
-    { R_PORT1, 1 << 15 },   // RST
-    { R_PORT2, 1 << 5 },    // CS
-    { R_PORT2, 1 << 4 },    // SCK
-    { R_PORT2, 1 << 2 },    // CIPO
-    { R_PORT2, 1 << 3 },    // COPI
-    { R_PORT4, 1 << 8 },    // PWM
-    { R_PORT4, 1 << 9 },    // INT
-    { R_PORT1, 1 << 0 },    // RX
-    { R_PORT1, 1 << 1 },    // TX
-    { R_PORT5, 1 << 12 },   // SCL
-    { R_PORT5, 1 << 11 },   // SDA
+    // No mikrobus pins.
 };
 
 /**
@@ -40,9 +29,7 @@ static const Pin mikrobus_pins[] = {
  * available on the target board.
  */
 static const Pin board_leds[] = {
-    { R_PORT4, 1 << 15 },  // LD1
-    { R_PORT4, 1 << 4 },   // LD2
-    { R_PORT4, 1 << 0 },   // LD3
+    { R_PORT1, 1 << 12 },  // LD1
 };
 
 /**
