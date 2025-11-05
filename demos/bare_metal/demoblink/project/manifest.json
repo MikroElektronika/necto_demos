@@ -10,7 +10,7 @@
     "display_name": "Bare Metal LED Blinking Demo",
     "name": "mikroe.demo.bare_metal.blink",
     "type": "project",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "demo": true,
     "link_github": "https://github.com/MikroElektronika/necto_demos/tree/main/demos/bare_metal/demoblink/project"
 }
