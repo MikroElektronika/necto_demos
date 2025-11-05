@@ -40,3 +40,4 @@
    - [Motor Control Evaluation System for RA Family - RA6T1 Group](https://www.renesas.com/en/design-resources/boards-kits/motor-rssk-ra6t1)
    - [Renesas Flexible Motor Control CPU Board for RA6T2 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/mcb-ra6t2)
    - [Renesas Flexible Motor Control CPU Board for RA8T1 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/mcb-ra8t1)
+- Added PORTA, PORTB, PORTC, PORTD, PORTE to blinking source for renesas
