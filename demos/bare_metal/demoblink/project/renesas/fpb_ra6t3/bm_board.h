@@ -18,30 +18,30 @@ typedef struct {
  * mapped to a specific MCU port and pin mask.
  */
 static const Pin mikrobus_pins[] = {
-    { R_PORT0, 1 << 0 },    // AN
-    { R_PORT0, 1 << 12 },   // RST
-    { R_PORT1, 1 << 3 },    // CS
-    { R_PORT1, 1 << 2 },    // SCK
-    { R_PORT1, 1 << 0 },    // CIPO
-    { R_PORT1, 1 << 1 },    // COPI
-    { R_PORT5, 1 << 0 },    // PWM
-    { R_PORT4, 1 << 9 },    // INT
-    { R_PORT1, 1 << 10 },   // RX
-    { R_PORT1, 1 << 9 },    // TX
-    { R_PORT0, 1 << 14 },   // SCL
-    { R_PORT0, 1 << 13 },   // SDA
-    { R_PORT0, 1 << 1 },    // AN
-    { R_PORT0, 1 << 2 },    // RST
-    { R_PORT1, 1 << 4 },    // CS
-    { R_PORT1, 1 << 2 },    // SCK
-    { R_PORT1, 1 << 0 },    // CIPO
-    { R_PORT1, 1 << 1 },    // COPI
-    { R_PORT3, 1 << 2 },    // PWM
-    { R_PORT1, 1 << 11 },   // INT
-    { R_PORT1, 1 << 10 },   // RX
-    { R_PORT1, 1 << 9 },    // TX
-    { R_PORT0, 1 << 14 },   // SCL
-    { R_PORT0, 1 << 13 },   // SDA
+    { R_PORT0, 1 << 0 },    // MIKROBUS_1_AN (A0)
+    { R_PORT4, 1 << 4 },    // MIKROBUS_1_RST (A3)
+    { R_PORT3, 1 << 1 },    // MIKROBUS_1_CS (D10)
+    { R_PORT1, 1 << 11 },   // MIKROBUS_1_SCK (D13)
+    { R_PORT1, 1 << 10 },   // MIKROBUS_1_CIPO (D12)
+    { R_PORT1, 1 << 9 },    // MIKROBUS_1_COPI (D11)
+    { R_PORT1, 1 << 13 },   // MIKROBUS_1_PWM (D6)
+    { R_PORT1, 1 << 5 },    // MIKROBUS_1_INT (D2)
+    { R_PORT4, 1 << 10 },   // MIKROBUS_1_RX (D0)
+    { R_PORT4, 1 << 11 },   // MIKROBUS_1_TX (D1)
+    { R_PORT0, 1 << 13 },   // MIKROBUS_1_SCL (A5)
+    { R_PORT0, 1 << 3 },    // MIKROBUS_1_SDA (A4)
+    { R_PORT0, 1 << 1 },    // MIKROBUS_2_AN (A1)
+    { R_PORT4, 1 << 2 },    // MIKROBUS_2_RST (A2)
+    { R_PORT4, 1 << 3 },    // MIKROBUS_2_CS (D9)
+    { R_PORT1, 1 << 11 },   // MIKROBUS_2_SCK (D13)
+    { R_PORT1, 1 << 10 },   // MIKROBUS_2_CIPO (D12)
+    { R_PORT1, 1 << 9 },    // MIKROBUS_2_COPI (D11)
+    { R_PORT4, 1 << 9 },    // MIKROBUS_2_PWM (D5)
+    { R_PORT4, 1 << 8 },    // MIKROBUS_2_INT (D3)
+    { R_PORT4, 1 << 10 },   // MIKROBUS_2_RX (D0)
+    { R_PORT4, 1 << 11 },   // MIKROBUS_2_TX (D1)
+    { R_PORT0, 1 << 13 },   // MIKROBUS_2_SCL (A5)
+    { R_PORT0, 1 << 3 },    // MIKROBUS_2_SDA (A4)
 };
 
 /**
@@ -52,8 +52,8 @@ static const Pin mikrobus_pins[] = {
  * available on the target board.
  */
 static const Pin board_leds[] = {
-    { R_PORT2, 1 << 13 },   // LD1
-    { R_PORT9, 1 << 14 },   // LD2
+    { R_PORT2, 1 << 7 },   // LD1
+    { R_PORT2, 1 << 6 },   // LD2
 };
 
 /**
