@@ -102,6 +102,26 @@ static inline void pin_init_output( const Pin *p, uint8_t init_state )
     else if ( p->port == R_PORT9 )
         R_PORT9->PDR |= p->pin_mask;
     #endif
+    #ifdef R_PORTA
+    else if ( p->port == R_PORTA )
+        R_PORTA->PDR |= p->pin_mask;
+    #endif
+    #ifdef R_PORTB
+    else if ( p->port == R_PORTB )
+        R_PORTB->PDR |= p->pin_mask;
+    #endif
+    #ifdef R_PORTC
+    else if ( p->port == R_PORTC )
+        R_PORTC->PDR |= p->pin_mask;
+    #endif
+    #ifdef R_PORTD
+    else if ( p->port == R_PORTD )
+        R_PORTD->PDR |= p->pin_mask;
+    #endif
+    #ifdef R_PORTE
+    else if ( p->port == R_PORTE )
+        R_PORTE->PDR |= p->pin_mask;
+    #endif
 
     if ( init_state )
         p->port->PODR |= p->pin_mask;
