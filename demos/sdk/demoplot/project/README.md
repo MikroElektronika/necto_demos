@@ -66,12 +66,12 @@ You can select any waveform type, frequency, or duty cycle directly in code.
 
 | Waveform | Preview |
 |-----------|----------|
-| **Sine Wave** | ![sine_wave](https://download.mikroe.com/images/mikrosdk/v2/demos/demoplot/demo_sine.png) |
-| **Square Wave** | ![square_wave](https://download.mikroe.com/images/mikrosdk/v2/demos/demoplot/demo_square.png) |
-| **Triangle Wave** | ![triangle_wave](https://download.mikroe.com/images/mikrosdk/v2/demos/demoplot/demo_triangle.png) |
-| **Sawtooth Wave** | ![sawtooth_wave](https://download.mikroe.com/images/mikrosdk/v2/demos/demoplot/demo_sawtooth.png) |
-| **Pulse Wave** | ![pulse_wave](https://download.mikroe.com/images/mikrosdk/v2/demos/demoplot/demo_pulse.png) |
-| **Random Wave** | ![random_wave](https://download.mikroe.com/images/mikrosdk/v2/demos/demoplot/demo_random.png) |
+| **Sine Wave** | ![sine_wave](https://download.mikroe.com/images/mikrosdk/v2/demos/demoplot/demo_plot_wave_sine.png) |
+| **Square Wave** | ![square_wave](https://download.mikroe.com/images/mikrosdk/v2/demos/demoplot/demo_plot_wave_square.png) |
+| **Triangle Wave** | ![triangle_wave](https://download.mikroe.com/images/mikrosdk/v2/demos/demoplot/demo_plot_wave_triangle.png) |
+| **Sawtooth Wave** | ![sawtooth_wave](https://download.mikroe.com/images/mikrosdk/v2/demos/demoplot/demo_plot_wave_sawtooth.png) |
+| **Pulse Wave** | ![pulse_wave](https://download.mikroe.com/images/mikrosdk/v2/demos/demoplot/demo_plot_wave_pulse.png) |
+| **Random Wave** | ![random_wave](https://download.mikroe.com/images/mikrosdk/v2/demos/demoplot/demo_plot_wave_random.png) |
 
 ---
 
