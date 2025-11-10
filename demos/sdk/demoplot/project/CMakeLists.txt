@@ -11,6 +11,8 @@ add_executable(platform_plot_demo
     main.c
 )
 
+math_check_target(platform_plot_demo)
+
 find_package(MikroSDK.Plot REQUIRED)
 target_link_libraries(platform_plot_demo PUBLIC MikroSDK.Plot)
 find_package(MikroC.Core REQUIRED)
