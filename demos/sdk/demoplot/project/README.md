@@ -17,8 +17,6 @@ No external hardware components are required.
 
 - Simply **connect your board via USB**, open the IDE’s **Plot window**, and observe the generated waveform signals in real time.
 
-![plot_demo](https://download.mikroe.com/images/mikrosdk/v2/demos/demoplot/demo_plot_preview.png)
-
 ---
 
 ## Software Support
