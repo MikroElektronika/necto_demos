@@ -22,7 +22,6 @@
 #include <math.h>
 #include <stdint.h>
 #include <stddef.h>
-#include <stdlib.h>  // for rand()
 
 #ifndef PI
     #define PI 3.14159265358979
@@ -152,6 +151,19 @@ static void plot_wave_signal(WaveformType type, size_t step);
  * @return Number of enabled waveform types.
  */
 static uint8_t count_active_waveforms(void);
+
+/**
+ * @brief  Generates a pseudo-random number within the range 0 to max.
+ *
+ * Uses a simple linear congruential generator (LCG) algorithm to produce a
+ * pseudo-random number. The function maintains an internal static seed that
+ * updates on each call. The result is always within the range [0, max].
+ *
+ * @param  max  The maximum value (inclusive) that the random number can reach.
+ *
+ * @return A pseudo-random number between 0 and max (inclusive).
+ */
+static uint32_t random_simple(uint32_t max);
 
 /* ------------------------------------------------------------------------- */
 /*                              Global Buffers                               */
@@ -328,7 +340,7 @@ static void generate_waveform(WaveformType type, uint8_t *buffer,
         case WAVEFORM_RANDOM:
         {
             for (size_t i = 0; i < size; ++i)
-                buffer[i] = (uint8_t)(rand() % 256);
+                buffer[i] = (uint8_t)(random_simple(i) % 256);
         }
         break;
 
@@ -375,3 +387,10 @@ static void plot_wave_signal(WaveformType type, size_t step)
             break;
     }
 }
+
+static uint32_t random_simple(uint32_t max) {
+    static uint32_t seed = 1; // You can change this initial seed if needed
+    seed = seed * 1664525UL + 1013904223UL;  // LCG formula
+    return (seed >> 8) % (max + 1);
+}
+
