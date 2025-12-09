@@ -41,3 +41,9 @@
    - [Renesas Flexible Motor Control CPU Board for RA6T2 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/mcb-ra6t2)
    - [Renesas Flexible Motor Control CPU Board for RA8T1 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/mcb-ra8t1)
 - Added PORTA, PORTB, PORTC, PORTD, PORTE to blinking source for renesas
+
+## Version 3.0.2
+
+- Fixed header files for Renesas Boards
+   - [Evaluation Kit for RA2A1 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra2a1)
+   - [Evaluation Kit for RA6M4 MCU Group](https://www.renesas.com/en/design-resources/boards-kits/ek-ra6m4)
