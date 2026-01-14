@@ -12,6 +12,10 @@ set(PROJECT_TYPE "mikrosdk" CACHE STRING "" FORCE)
 # Choose the board and vendor for this example
 define_vendor_and_board(vendor board)
 
+# Notify about selected files.
+message(INFO ": Vendor is: \"${vendor}\"")
+message(INFO ": Board is: \"${board}\"")
+
 add_executable(motor_demo
     main.c
     motor_demo.h
