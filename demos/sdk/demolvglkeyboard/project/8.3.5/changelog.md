@@ -13,3 +13,7 @@
 ## Version 3.1.1
 
 - Added an auto scaling of elements for 4 inch display
+
+## Version 3.2.0
+
+- Divided the demo structurally to support both the version 8 and the version 9 of LVGL
