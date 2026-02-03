@@ -1,9 +1,9 @@
-# LVGL Tool DEMO
+# LVGL Keyboard DEMO
 
-This Demo shows how to use Widget components of LVGL Tool in NECTOStudio IDE. First it displays the intro screen and then it shows application screen.
+This Demo shows how to use Keyboard component of LVGL Tool in NECTOStudio IDE. First it displays the intro screen and then it shows application screen.
 
 - **Authors**     : [MikroE](https://github.com/MikroElektronika)
-- **Version**     : 3.1.0
+- **Version**     : 3.2.0
 - **Date**        : ${COPYRIGHT_YEAR}.
 
 ## Hardware Support

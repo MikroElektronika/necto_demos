@@ -88,9 +88,9 @@ async def main(gh_instance, demos, args, upload_api):
                     demo, utils.get_system_separator()
                 )
             ),
-            username = args.packer_username,
-            password = args.packer_password,
-            url = args.packer_url
+            username = '',
+            password = '',
+            url = ''
         )
 
         if package:

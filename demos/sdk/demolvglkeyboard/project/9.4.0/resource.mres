@@ -1,0 +1,73 @@
+[
+    {
+        "lvgl_version": "9.4.0",
+        "name": "main_screen",
+        "resources": [
+            {
+                "alias": "Ubuntu_Regular_s17_r32_127",
+                "dpi": 72,
+                "endChar": 127,
+                "family": "Ubuntu",
+                "path": "Ubuntu-Regular.ttf",
+                "pointSize": 17,
+                "startChar": 32,
+                "strikeOut": false,
+                "styleName": "Regular",
+                "type": "font",
+                "underline": false
+            },
+            {
+                "alias": "mikroe_logo_whiteback_png_306x82",
+                "height": 82,
+                "originalPath": "/home/esma/Documents/github/lvgl8-9/resources/mikroe.logo.whiteback.png",
+                "path": "mikroe.logo.whiteback.png",
+                "quality": 50,
+                "type": "image",
+                "width": 306
+            },
+            {
+                "alias": "mikroe_logo_whiteback_png_257x87",
+                "baseAlias": "mikroe_logo_whiteback_png_306x82",
+                "height": 87,
+                "originalPath": "/home/esma/Documents/github/lvgl8-9/resources/mikroe.logo.whiteback.png",
+                "path": "mikroe.logo.whiteback.png",
+                "quality": 50,
+                "type": "image",
+                "width": 257
+            },
+            {
+                "alias": "Ubuntu_Regular_s14_r32_127",
+                "dpi": 72,
+                "endChar": 127,
+                "family": "Ubuntu",
+                "path": "Ubuntu-Regular.ttf",
+                "pointSize": 14,
+                "startChar": 32,
+                "strikeOut": false,
+                "styleName": "Regular",
+                "type": "font",
+                "underline": false
+            }
+        ]
+    },
+    {
+        "lvgl_version": "9.4.0",
+        "name": "second_screen",
+        "resources": [
+            {
+                "alias": "Ubuntu_Regular_s18_r32_127",
+                "dpi": 72,
+                "endChar": 127,
+                "family": "Ubuntu",
+                "originalPath": "/home/esma/.MIKROE/NECTOStudio7_Experimental/resources/fonts/Ubuntu-R.ttf",
+                "path": "Ubuntu-R.ttf",
+                "pointSize": 18,
+                "startChar": 32,
+                "strikeOut": false,
+                "styleName": "Regular",
+                "type": "font",
+                "underline": false
+            }
+        ]
+    }
+]
