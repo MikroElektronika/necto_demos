@@ -29,7 +29,7 @@ static const Pin mikrobus_pins[] = {
     { R_PORT3, 1 << 1 },    // RX
     { R_PORT3, 1 << 2 },    // TX
     { R_PORT4, 1 << 0 },    // SCL
-    { R_PORT4, 1 << 0 },    // SDA
+    { R_PORT4, 1 << 1 },    // SDA
 };
 
 /**
