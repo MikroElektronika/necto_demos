@@ -20,7 +20,7 @@ typedef struct {
 static const Pin mikrobus_pins[] = {
     { R_PORT0, 1 << 14 },   // MIKROBUS_1_AN (A0)
     { R_PORT0, 1 << 9 },    // MIKROBUS_1_RST (A3)
-    { R_PORT1, 1 << 7 },    // MIKROBUS_1_CS (D10)
+    { R_PORT1, 1 << 12 },    // MIKROBUS_1_CS (D10)
     { R_PORT4, 1 << 7 },    // MIKROBUS_1_SCK (D13)
     { R_PORT2, 1 << 12 },   // MIKROBUS_1_CIPO (D12)
     { R_PORT2, 1 << 13 },   // MIKROBUS_1_COPI (D11)

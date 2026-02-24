@@ -18,7 +18,7 @@ typedef struct {
  * mapped to a specific MCU port and pin mask.
  */
 static const Pin mikrobus_pins[] = {
-    { R_PORT1, 1 << 5 },  // LD1
+    // No mikrobus pins.
 };
 
 /**
