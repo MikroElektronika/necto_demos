@@ -127,7 +127,7 @@ int main(void) {
     #endif
 
     if( TEST_PIN_UART_TX == HAL_PIN_NC || TEST_PIN_UART_RX == HAL_PIN_NC ) {
-        printf_me( "Pins are not defined!\n" );
+        // Pins are not defined!
         signal_error( TEST_PIN_1 );
     }
 
@@ -145,7 +145,7 @@ int main(void) {
     uart_cfg.rx_ring_size = sizeof( uart_rx_buffer );
 
     if( ACQUIRE_FAIL == uart_open( &uart, &uart_cfg ) ) {
-        printf_me( "UART open failed.\n" );
+        // UART open failed.
         signal_error( TEST_PIN_2 );
     }
 
@@ -155,25 +155,25 @@ int main(void) {
 
     // Set baud rate.
     if ( UART_SUCCESS != uart_set_baud( &uart, 115200 ) ) {
-        printf_me( "UART set baud failed.\n" );
+        // UART set baud failed.
         signal_error( TEST_PIN_3 );
     }
 
     // Set data parity. ( no parity )
     if ( UART_SUCCESS != uart_set_parity( &uart, UART_PARITY_DEFAULT ) ) {
-        printf_me( "UART set parity failed.\n" );
+        // UART set parity failed.
         signal_error( TEST_PIN_4 );
     };
 
     // Set stop bits. ( one stop bit )
     if ( UART_SUCCESS != uart_set_stop_bits( &uart, UART_STOP_BITS_DEFAULT ) ) {
-        printf_me( "UART set stop bits failed.\n" );
+        // UART set stop bits failed.
         signal_error( TEST_PIN_5 );
     }
 
     // Set data bits. ( 8-bit data )
     if ( UART_SUCCESS != uart_set_data_bits( &uart, UART_DATA_BITS_DEFAULT ) ) {
-        printf_me( "UART set data bits failed.\n" );
+        // UART set data bits failed.
         signal_error( TEST_PIN_6 );
     }
 
@@ -185,7 +185,7 @@ int main(void) {
 
     // Write out data with new line.
     if ( UART_ERROR == uart_println( &uart, "UART DEMO" ) ) {
-        printf_me( "UART print failed.\n" );
+        // UART print failed.
         signal_error( TEST_PIN_7 );
     }
 
@@ -194,13 +194,13 @@ int main(void) {
 
     // Write out data.
     if ( UART_ERROR == uart_print( &uart, "Hello!" ) ) {
-        printf_me( "UART println failed.\n" );
+        // UART println failed.
         signal_error( TEST_PIN_8 );
     }
 
     // Print new line.
     if ( UART_ERROR == uart_println( &uart, "" ) ) {
-        printf_me( "UART print failed.\n" );
+        // UART print failed.
         signal_error( TEST_PIN_9 );
     }
 
@@ -215,14 +215,14 @@ int main(void) {
          uart.config.tx_buf.tail ||
          uart.config.tx_buf.size )
     {
-        printf_me( "UART TX buffer has not been cleared.\n" );
+        // UART TX buffer has not been cleared.
         signal_error( TEST_PIN_10 );
     }
     if ( uart.config.rx_buf.head ||
          uart.config.rx_buf.tail ||
          uart.config.rx_buf.size )
     {
-        printf_me( "UART RX buffer has not been cleared.\n" );
+        // UART RX buffer has not been cleared.
         signal_error( TEST_PIN_11 );
     }
 
@@ -238,12 +238,12 @@ int main(void) {
         {
             read_size = uart_write( &uart, buffer, read_size );  // Write what you read.
         } else {
-            printf_me( "UART read failed.\n" );
+            // UART read failed.
             signal_error( TEST_PIN_12 );
         }
 
         if ( uart.is_blocking && ( UART_ERROR == read_size ) ) {
-            printf_me( "UART write failed.\n" );
+            // UART write failed.
             signal_error( TEST_PIN_13 );
         }
     }
