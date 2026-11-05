@@ -27,6 +27,7 @@
  */
 
 #include "motor_demo.h"
+#include "delays.h"
 
 int main( void )
 {
