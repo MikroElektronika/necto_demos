@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 3.1.1
+
+- Added missing `delays.h` include to `main.c`.
+
 ## Version 3.1.0
 
 - Modified cmake function which selects appropriate board

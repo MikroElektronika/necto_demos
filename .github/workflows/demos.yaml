@@ -15,6 +15,22 @@ on:
         type: boolean
         description: Select to upload all demos in repository
         default: false
+      index_development:
+        type: boolean
+        description: Index to Development
+        default: true
+      index_experimental:
+        type: boolean
+        description: Index to Experimental
+        default: false
+      index_live:
+        type: boolean
+        description: Index to Live
+        default: false
+      dry_run:
+        type: boolean
+        description: Only report what would be uploaded/indexed
+        default: false
 
 jobs:
   Upload:
@@ -42,7 +58,34 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements/demos.txt
 
-      - name: Package and upload demos
+      - name: Resolve selected indexes
+        id: resolve-index
+        env:
+          ES_INDEX_LIVE: ${{ secrets.ES_INDEX_LIVE }}
+          ES_INDEX_TEST: ${{ secrets.ES_INDEX_TEST }}
+          ES_INDEX_EXPERIMENTAL: ${{ secrets.ES_INDEX_EXPERIMENTAL }}
+        run: |
+          indexes=()
+          if [[ "${{ github.event.inputs.index_development }}" == "true" ]]; then indexes+=("$ES_INDEX_TEST"); fi
+          if [[ "${{ github.event.inputs.index_experimental }}" == "true" ]]; then indexes+=("$ES_INDEX_EXPERIMENTAL"); fi
+          if [[ "${{ github.event.inputs.index_live }}" == "true" ]]; then indexes+=("$ES_INDEX_LIVE"); fi
+          index_names=$(IFS='|'; echo "${indexes[*]}")
+          echo "index_names=$index_names" >> "$GITHUB_OUTPUT"
+          echo "Selected ${#indexes[@]} index(es)."
+
+      - name: Package, upload changed demos and index them
+        env:
+          ES_HOST: ${{ secrets.ES_HOST }}
+          ES_USER: ${{ secrets.ES_USER }}
+          ES_PASSWORD: ${{ secrets.ES_PASSWORD }}
         run: |
           echo "Uploading demos..."
-          python -u scripts/workflows/demos_upload.py ${{ github.repository }} ${{ steps.app-token.outputs.token }} ${{ github.event.inputs.release_version }} ${{ secrets.PACKER_DOWNLOAD_LINK }} ${{ secrets.PACKER_USERNAME }} ${{ secrets.PACKER_PASSWORD }} ${{ secrets.PACKER_URL }} "${{ github.event.inputs.demo_names }}" "--all_demos" "${{ github.event.inputs.demos_all }}"
+          python -u scripts/workflows/demos_upload.py \
+            "${{ github.repository }}" \
+            "${{ steps.app-token.outputs.token }}" \
+            "${{ github.event.inputs.release_version }}" \
+            "${{ secrets.PACKER_DOWNLOAD_LINK }}" \
+            "${{ github.event.inputs.demo_names }}" \
+            --all_demos "${{ github.event.inputs.demos_all }}" \
+            --index_names "${{ steps.resolve-index.outputs.index_names }}" \
+            --dry_run "${{ github.event.inputs.dry_run }}"

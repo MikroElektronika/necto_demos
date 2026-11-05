@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 3.0.1
+
+- Removed `printf_me` calls, which are no longer available in NECTO and caused build errors. Errors are still signaled via test pins.
+
 ## Version 3.0.0
 
 - New structure
