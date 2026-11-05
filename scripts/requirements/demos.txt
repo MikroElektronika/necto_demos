@@ -2,3 +2,4 @@ requests
 py7zr
 aiohttp
 aiofiles
+elasticsearch==7.13.4
